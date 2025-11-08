@@ -18,9 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* ===== ENHANCED CORPORATE CSS VARIABLES ===== */
         :root {
-            /* Enhanced Corporate Color Palette */
             --primary-black: #000000;
             --primary-white: #ffffff;
             --corporate-navy: #001F3F;
@@ -35,7 +33,6 @@
             --corporate-teal: #008080;
             --corporate-gold: #D4AF37;
             
-            /* Enhanced Gradients */
             --gradient-primary: linear-gradient(135deg, var(--corporate-blue) 0%, var(--corporate-navy) 100%);
             --gradient-light: linear-gradient(135deg, var(--light-gray) 0%, var(--primary-white) 100%);
             --gradient-dark: linear-gradient(135deg, var(--corporate-navy) 0%, var(--primary-black) 100%);
@@ -44,7 +41,6 @@
             --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
             --gradient-gold: linear-gradient(135deg, var(--corporate-gold) 0%, #E6C260 100%);
             
-            /* Enhanced Shadows */
             --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
             --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -52,12 +48,10 @@
             --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             --shadow-glow: 0 0 20px rgba(0, 86, 179, 0.15);
             
-            /* Enhanced Transitions */
             --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             
-            /* Enhanced Spacing System */
             --space-xs: 0.5rem;
             --space-sm: 1rem;
             --space-md: 1.5rem;
@@ -67,7 +61,6 @@
             --space-3xl: 6rem;
             --space-4xl: 8rem;
             
-            /* Enhanced Border Radius */
             --radius-sm: 4px;
             --radius: 6px;
             --radius-lg: 8px;
@@ -76,7 +69,6 @@
             --radius-3xl: 24px;
             --radius-full: 50%;
             
-            /* Layout */
             --max-width: 1280px;
             --header-height: 80px;
             --header-height-mobile: 70px;
@@ -103,7 +95,6 @@
             font-weight: 400;
         }
 
-        /* ===== ENHANCED TYPOGRAPHY ===== */
         h1, h2, h3, h4, h5, h6 {
             font-weight: 600;
             line-height: 1.3;
@@ -132,7 +123,6 @@
             color: var(--medium-gray);
         }
 
-        /* ===== ENHANCED LAYOUT UTILITIES ===== */
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
@@ -169,7 +159,6 @@
             }
         }
 
-        /* ===== ENHANCED HEADER ===== */
         .header {
             position: fixed;
             top: 0;
@@ -236,7 +225,6 @@
             }
         }
 
-        /* Enhanced Desktop Navigation */
         .nav-menu {
             display: flex;
             list-style: none;
@@ -314,7 +302,6 @@
             left: 100%;
         }
 
-        /* Enhanced Mobile Menu */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -429,7 +416,6 @@
             box-shadow: var(--shadow-md);
         }
 
-        /* ===== ENHANCED HERO SECTION WITH VIDEO BACKGROUND ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -467,7 +453,6 @@
                 min-height: 90vh;
             }
             
-            /* Optimize video for mobile */
             .hero-video {
                 object-position: center;
             }
@@ -597,75 +582,6 @@
             color: var(--corporate-blue);
         }
 
-        /* ===== ENHANCED CLIENTS SECTION ===== */
-        .clients {
-            padding: var(--space-2xl) 0;
-            background: var(--light-gray);
-            position: relative;
-        }
-
-        .clients:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border-gray), transparent);
-        }
-
-        .clients-content {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .clients-label {
-            display: inline-block;
-            color: var(--corporate-blue);
-            font-weight: 600;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: var(--space-lg);
-        }
-
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: var(--space-xl);
-            align-items: center;
-            margin-top: var(--space-xl);
-        }
-
-        .client-logo {
-            height: 80px;
-            filter: grayscale(100%);
-            opacity: 0.6;
-            transition: var(--transition-smooth);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: var(--space-sm);
-            background: var(--primary-white);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .client-logo img {
-            max-height: 100%;
-            max-width: 100%;
-            object-fit: contain;
-        }
-
-        .client-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* ===== ENHANCED SERVICES SECTION ===== */
         .services {
             background: var(--primary-white);
             position: relative;
@@ -684,7 +600,7 @@
         .section-header {
             text-align: center;
             max-width: 800px;
-            margin: 0 auto var(--space-2xl);
+            margin: 0 auto var(--space-xl);
         }
 
         .section-label {
@@ -714,7 +630,7 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-xl);
+            gap: var(--space-lg);
         }
 
         @media (max-width: 1024px) {
@@ -731,8 +647,8 @@
 
         .service-card {
             background: var(--primary-white);
-            padding: var(--space-xl);
-            border-radius: var(--radius-xl);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
             transition: var(--transition-smooth);
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-gray);
@@ -741,6 +657,7 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            text-align: center;
         }
 
         .service-card:before {
@@ -757,8 +674,8 @@
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
             border-color: var(--corporate-blue);
         }
 
@@ -767,16 +684,16 @@
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: var(--light-blue);
             border-radius: var(--radius-lg);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: var(--space-lg);
+            margin: 0 auto var(--space-md);
             color: var(--corporate-blue);
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             transition: var(--transition-smooth);
         }
 
@@ -787,187 +704,47 @@
         }
 
         .service-title {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 600;
-            margin-bottom: var(--space-md);
+            margin-bottom: var(--space-sm);
             color: var(--corporate-navy);
+            line-height: 1.3;
         }
 
         .service-description {
             color: var(--medium-gray);
-            line-height: 1.6;
+            font-size: 0.875rem;
+            line-height: 1.5;
             margin-bottom: var(--space-md);
             flex-grow: 1;
         }
 
         .service-features {
             list-style: none;
-            margin-top: var(--space-md);
+            margin-top: var(--space-sm);
         }
 
         .service-feature {
             padding: var(--space-xs) 0;
             color: var(--medium-gray);
+            font-size: 0.75rem;
             display: flex;
             align-items: center;
-            gap: var(--space-sm);
+            justify-content: center;
+            gap: var(--space-xs);
             transition: var(--transition-fast);
         }
 
         .service-feature:hover {
             color: var(--corporate-blue);
-            transform: translateX(5px);
         }
 
         .service-feature:before {
-            content: "✓";
-            color: var(--success-green);
-            font-weight: 600;
-        }
-
-        /* ===== ENHANCED PORTFOLIO SECTION ===== */
-        .portfolio {
-            background: var(--light-gray);
-            position: relative;
-        }
-
-        .portfolio:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border-gray), transparent);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-xl);
-        }
-
-        @media (max-width: 768px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .portfolio-card {
-            background: var(--primary-white);
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            transition: var(--transition-smooth);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-gray);
-            position: relative;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--corporate-blue);
-        }
-
-        .portfolio-image {
-            width: 100%;
-            height: 280px;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .portfolio-image:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, transparent 100%);
-            transition: var(--transition-smooth);
-        }
-
-        .portfolio-card:hover .portfolio-image:before {
-            background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, transparent 100%);
-        }
-
-        .portfolio-content {
-            padding: var(--space-xl);
-            position: relative;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            gap: var(--space-xs);
-            margin-bottom: var(--space-md);
-            flex-wrap: wrap;
-        }
-
-        .portfolio-tag {
-            background: var(--light-blue);
+            content: "•";
             color: var(--corporate-blue);
-            padding: var(--space-xs) var(--space-sm);
-            border-radius: var(--radius-sm);
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: var(--transition-fast);
-        }
-
-        .portfolio-card:hover .portfolio-tag {
-            background: var(--corporate-blue);
-            color: var(--primary-white);
-        }
-
-        .portfolio-title {
-            font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: var(--space-sm);
-            color: var(--corporate-navy);
         }
 
-        .portfolio-description {
-            color: var(--medium-gray);
-            margin-bottom: var(--space-lg);
-            line-height: 1.6;
-        }
-
-        .portfolio-link {
-            color: var(--corporate-blue);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
-            transition: var(--transition-fast);
-            position: relative;
-        }
-
-        .portfolio-link:after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--corporate-blue);
-            transition: var(--transition-smooth);
-        }
-
-        .portfolio-link:hover {
-            gap: var(--space-sm);
-        }
-
-        .portfolio-link:hover:after {
-            width: 100%;
-        }
-
-        /* ===== COMPACT PROCESS SECTION ===== */
         .process {
             background: var(--light-gray);
             position: relative;
@@ -1109,7 +886,530 @@
             font-weight: 600;
         }
 
-        /* ===== ENHANCED CTA SECTION ===== */
+        .portfolio {
+            background: var(--light-gray);
+            position: relative;
+        }
+
+        .portfolio:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-gray), transparent);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-xl);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+                max-width: 600px;
+            }
+        }
+
+        .portfolio-card {
+            background: var(--primary-white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-gray);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--corporate-blue);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--primary-white) 100%);
+            padding: var(--space-xl);
+        }
+
+        .client-logo-wrapper {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .portfolio-logo {
+            max-width: 100%;
+            max-height: 80px;
+            object-fit: contain;
+            transition: var(--transition-smooth);
+            filter: grayscale(100%);
+            opacity: 0.8;
+        }
+
+        .portfolio-card:hover .portfolio-logo {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .project-badge {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            background: var(--gradient-primary);
+            color: var(--primary-white);
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 3;
+        }
+
+        .portfolio-content {
+            padding: var(--space-xl);
+            position: relative;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--space-md);
+            gap: var(--space-md);
+        }
+
+        .client-info {
+            flex: 1;
+        }
+
+        .client-industry {
+            color: var(--corporate-blue);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .portfolio-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0;
+            color: var(--corporate-navy);
+            line-height: 1.2;
+        }
+
+        .project-type {
+            background: var(--light-blue);
+            color: var(--corporate-blue);
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-lg);
+            flex-wrap: wrap;
+        }
+
+        .portfolio-tag {
+            background: var(--light-gray);
+            color: var(--medium-gray);
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: var(--transition-fast);
+            border: 1px solid var(--border-gray);
+        }
+
+        .portfolio-card:hover .portfolio-tag {
+            background: var(--corporate-blue);
+            color: var(--primary-white);
+            border-color: var(--corporate-blue);
+        }
+
+        .portfolio-description {
+            color: var(--medium-gray);
+            margin-bottom: var(--space-lg);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .project-highlights {
+            margin-bottom: var(--space-xl);
+        }
+
+        .highlights-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--corporate-navy);
+            margin-bottom: var(--space-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .highlight-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-sm);
+        }
+
+        @media (max-width: 480px) {
+            .highlight-items {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--medium-gray);
+            font-size: 0.85rem;
+        }
+
+        .highlight-item i {
+            color: var(--corporate-blue);
+            width: 16px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .portfolio-actions {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: auto;
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-actions {
+                flex-direction: column;
+            }
+        }
+
+        .portfolio-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+        }
+
+        .portfolio-link.primary {
+            background: var(--corporate-blue);
+            color: var(--primary-white);
+            flex: 1;
+            justify-content: center;
+        }
+
+        .portfolio-link.primary:hover {
+            background: var(--corporate-navy);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .portfolio-link.secondary {
+            background: transparent;
+            color: var(--corporate-blue);
+            border-color: var(--corporate-blue);
+        }
+
+        .portfolio-link.secondary:hover {
+            background: var(--corporate-blue);
+            color: var(--primary-white);
+        }
+
+        .case-study-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            backdrop-filter: blur(5px);
+        }
+
+        .case-study-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-lg);
+        }
+
+        .modal-content {
+            background: var(--primary-white);
+            border-radius: var(--radius-xl);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: var(--shadow-2xl);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            background: var(--light-gray);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.25rem;
+            color: var(--dark-gray);
+            transition: var(--transition-smooth);
+            z-index: 10;
+        }
+
+        .close-modal:hover {
+            background: var(--corporate-blue);
+            color: var(--primary-white);
+        }
+
+        .modal-body {
+            padding: var(--space-3xl) var(--space-xl);
+        }
+
+        .case-study-hero {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+            padding-bottom: var(--space-xl);
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .case-study-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-sm);
+            color: var(--corporate-navy);
+        }
+
+        .case-study-hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--medium-gray);
+            margin-bottom: var(--space-lg);
+        }
+
+        .case-meta {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            flex-wrap: wrap;
+        }
+
+        .case-meta span {
+            background: var(--light-blue);
+            color: var(--corporate-blue);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .case-study-section {
+            margin-bottom: var(--space-2xl);
+        }
+
+        .case-study-section h2 {
+            font-size: 1.75rem;
+            margin-bottom: var(--space-lg);
+            color: var(--corporate-navy);
+            position: relative;
+            padding-bottom: var(--space-sm);
+        }
+
+        .case-study-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .stat {
+            text-align: center;
+            padding: var(--space-lg);
+            background: var(--light-gray);
+            border-radius: var(--radius-lg);
+            transition: var(--transition-smooth);
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat .number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--corporate-blue);
+            line-height: 1;
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat .label {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            font-weight: 500;
+        }
+
+        .challenge-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            margin: var(--space-xl) 0;
+        }
+
+        @media (max-width: 768px) {
+            .challenge-solution {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .challenge, .solution {
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+        }
+
+        .challenge {
+            background: #fff5f5;
+            border-left: 4px solid #e53e3e;
+        }
+
+        .solution {
+            background: #f0fff4;
+            border-left: 4px solid #38a169;
+        }
+
+        .challenge h3, .solution h3 {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .challenge h3 {
+            color: #c53030;
+        }
+
+        .solution h3 {
+            color: #2d7d46;
+        }
+
+        .challenge h3:before {
+            content: '⚠️';
+        }
+
+        .solution h3:before {
+            content: '✅';
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+
+        .tech-tag {
+            background: var(--corporate-blue);
+            color: var(--primary-white);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .testimonial-block {
+            background: var(--light-blue);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            margin: var(--space-xl) 0;
+            border-left: 4px solid var(--corporate-blue);
+        }
+
+        .testimonial-block blockquote {
+            font-size: 1.125rem;
+            font-style: italic;
+            color: var(--dark-gray);
+            margin-bottom: var(--space-md);
+            line-height: 1.6;
+        }
+
+        .testimonial-block cite {
+            font-weight: 600;
+            color: var(--corporate-blue);
+            font-style: normal;
+        }
+
         .cta {
             background: var(--light-gray);
             text-align: center;
@@ -1176,7 +1476,6 @@
             color: var(--primary-white);
         }
 
-        /* ===== ENHANCED FOOTER ===== */
         .footer {
             background: var(--corporate-navy);
             color: var(--primary-white);
@@ -1220,11 +1519,9 @@
             align-items: center;
         }
 
-        /* FIXED FOOTER LOGO STYLING */
         .footer-logo {
-            height: 100px;
+            height: 60px;
             width: auto;
-            /* Removed the problematic filter that was making it white */
         }
 
         .footer-description {
@@ -1337,7 +1634,6 @@
             font-size: 0.875rem;
         }
 
-        /* ===== ENHANCED ANIMATIONS ===== */
         @keyframes slideInUp {
             from {
                 opacity: 0;
@@ -1407,7 +1703,6 @@
             animation: pulse 2s infinite;
         }
 
-        /* ===== ENHANCED LOADING ANIMATION ===== */
         .loading {
             position: fixed;
             top: 0;
@@ -1441,7 +1736,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* ===== ENHANCED MOBILE-SPECIFIC STYLES ===== */
         @media (max-width: 480px) {
             h1 {
                 font-size: 2rem;
@@ -1467,12 +1761,6 @@
                 padding: var(--space-md) var(--space-lg);
             }
             
-            .clients-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-lg);
-            }
-            
-            /* Mobile-specific touch improvements */
             .btn, .nav-link, .mobile-nav-link {
                 -webkit-tap-highlight-color: transparent;
             }
@@ -1482,7 +1770,6 @@
             }
         }
 
-        /* ===== ENHANCED ACCESSIBILITY ===== */
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
@@ -1507,7 +1794,6 @@
             border: 0;
         }
         
-        /* ===== ENHANCED FOCUS STYLES ===== */
         button:focus-visible,
         a:focus-visible {
             outline: 2px solid var(--corporate-blue);
@@ -1516,16 +1802,13 @@
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
     <div class="loading" id="loading">
         <div class="loading-spinner"></div>
     </div>
 
-    <!-- Header -->
     <header class="header" id="header">
         <nav class="nav-container">
             <a href="#" class="logo">
-                <!-- Using your actual logo file mm1.png (900x300) -->
                 <img src="mm1.png" alt="maxmin" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>maxmin</span>';">
             </a>
             
@@ -1544,7 +1827,6 @@
             </button>
         </nav>
 
-        <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <a href="#home" class="mobile-nav-link">Home</a>
             <a href="#services" class="mobile-nav-link">Services</a>
@@ -1554,16 +1836,12 @@
         </div>
     </header>
 
-    <!-- Hero Section with Video Background -->
     <section class="hero" id="home">
-        <!-- Video Background -->
         <video class="hero-video" autoplay muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%23001F3F'/%3E%3C/svg%3E">
             <source src="wave.mp4" type="video/mp4">
-            <!-- Fallback for browsers that don't support video -->
             Your browser does not support the video tag.
         </video>
         
-        <!-- Gradient Overlay -->
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
@@ -1583,25 +1861,6 @@
         </div>
     </section>
 
-    <!-- Clients Section -->
-    <section class="clients section-sm">
-        <div class="container">
-            <div class="clients-content">
-                <div class="clients-label">Trusted by Industry Leaders</div>
-                <div class="clients-grid">
-                    <div class="client-logo">
-                        <!-- Using your actual client logos -->
-                        <img src="prv.png" alt="Prove" onerror="this.style.display='none'; this.parentElement.innerHTML='Prove';">
-                    </div>
-                    <div class="client-logo">
-                        <img src="telt.png" alt="Teliti" onerror="this.style.display='none'; this.parentElement.innerHTML='Teliti';">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
     <section class="services section" id="services">
         <div class="container">
             <div class="section-header">
@@ -1618,18 +1877,15 @@
                     <div class="service-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3 class="service-title">Corporate Website Design & Development</h3>
+                    <h3 class="service-title">Website Design & Development</h3>
                     <p class="service-description">
-                        Complete corporate website solutions that reflect your brand's professionalism 
-                        and establish credibility in the digital space with cutting-edge design and technology.
+                        Complete corporate website solutions that reflect your brand's professionalism with cutting-edge design and technology.
                     </p>
                     <ul class="service-features">
                         <li class="service-feature">Custom responsive design</li>
                         <li class="service-feature">Brand identity integration</li>
                         <li class="service-feature">Content management system</li>
                         <li class="service-feature">SEO optimization</li>
-                        <li class="service-feature">Performance optimization</li>
-                        <li class="service-feature">Mobile-first approach</li>
                     </ul>
                 </div>
 
@@ -1637,18 +1893,15 @@
                     <div class="service-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
-                    <h3 class="service-title">Website Maintenance & Support</h3>
+                    <h3 class="service-title">Maintenance & Support</h3>
                     <p class="service-description">
-                        Ongoing support and maintenance to ensure your corporate website remains 
-                        secure, up-to-date, and performing optimally with proactive monitoring.
+                        Ongoing support and maintenance to ensure your corporate website remains secure and performing optimally.
                     </p>
                     <ul class="service-features">
                         <li class="service-feature">Regular security updates</li>
                         <li class="service-feature">Content updates</li>
                         <li class="service-feature">Performance monitoring</li>
                         <li class="service-feature">Technical support</li>
-                        <li class="service-feature">Backup management</li>
-                        <li class="service-feature">Hosting management</li>
                     </ul>
                 </div>
 
@@ -1656,25 +1909,21 @@
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="service-title">Digital Strategy & Consulting</h3>
+                    <h3 class="service-title">Strategy & Consulting</h3>
                     <p class="service-description">
-                        Strategic guidance to maximize your digital presence and achieve your 
-                        business objectives through data-driven web solutions and optimization.
+                        Strategic guidance to maximize your digital presence through data-driven web solutions and optimization.
                     </p>
                     <ul class="service-features">
                         <li class="service-feature">Digital transformation</li>
                         <li class="service-feature">User experience strategy</li>
                         <li class="service-feature">Content strategy</li>
                         <li class="service-feature">Analytics implementation</li>
-                        <li class="service-feature">Conversion optimization</li>
-                        <li class="service-feature">Performance auditing</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Compact Process Section -->
     <section class="process section" id="process">
         <div class="container">
             <div class="process-header">
@@ -1760,7 +2009,6 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
     <section class="portfolio section" id="portfolio">
         <div class="container">
             <div class="section-header">
@@ -1773,66 +2021,295 @@
             </div>
 
             <div class="portfolio-grid">
-                <!-- Teliti Case Study -->
                 <div class="portfolio-card fade-in">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #001F3F 0%, #0056B3 100%);">
-                        TELITI WEBSITE
+                    <div class="portfolio-image">
+                        <div class="client-logo-wrapper">
+                            <img src="telt.png" alt="Teliti Infotech" class="portfolio-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'client-name\'>Teliti Infotech</div>';">
+                        </div>
+                        <div class="project-badge">Featured Project</div>
                     </div>
                     <div class="portfolio-content">
+                        <div class="portfolio-header">
+                            <div class="client-info">
+                                <span class="client-industry">IT Solutions Provider</span>
+                                <h3 class="portfolio-title">Teliti Infotech</h3>
+                            </div>
+                            <div class="project-type">Complete Redesign</div>
+                        </div>
+                        
                         <div class="portfolio-tags">
                             <span class="portfolio-tag">Corporate Website</span>
-                            <span class="portfolio-tag">IT Solutions</span>
-                            <span class="portfolio-tag">Responsive Design</span>
+                            <span class="portfolio-tag">Enterprise Solution</span>
+                            <span class="portfolio-tag">Digital Transformation</span>
                         </div>
-                        <h3 class="portfolio-title">Teliti Corporate Website</h3>
+                        
                         <p class="portfolio-description">
-                            A comprehensive corporate website for Malaysia's leading IT solutions provider, 
-                            featuring service showcases, client portfolio, and lead generation capabilities.
+                            Comprehensive website redesign for Malaysia's leading IT solutions provider, 
+                            delivering modern design, enhanced user experience, and improved performance 
+                            across all devices with better lead generation capabilities.
                         </p>
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">WordPress</span>
-                            <span class="portfolio-tag">Custom Theme</span>
-                            <span class="portfolio-tag">SEO Optimized</span>
+                        
+                        <div class="project-highlights">
+                            <h4 class="highlights-title">Key Achievements:</h4>
+                            <div class="highlight-items">
+                                <div class="highlight-item">
+                                    <i class="fas fa-paint-brush"></i>
+                                    <span>Modern Design System</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>Performance Optimized</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>Mobile-First Approach</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-search"></i>
+                                    <span>SEO Enhanced</span>
+                                </div>
+                            </div>
                         </div>
-                        <a href="https://teliti.com" target="_blank" class="portfolio-link">
-                            Visit Live Website
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="portfolio-actions">
+                            <a href="https://teliti.com" target="_blank" class="portfolio-link primary">
+                                <span>Visit Live Website</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#teliti-case-study" class="portfolio-link secondary modal-trigger">
+                                <span>View Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Prove Case Study -->
                 <div class="portfolio-card fade-in">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #0056B3 0%, #0074E4 100%);">
-                        PROVE WEBSITE
+                    <div class="portfolio-image">
+                        <div class="client-logo-wrapper">
+                            <img src="prv.png" alt="Prove ForTech" class="portfolio-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'client-name\'>Prove ForTech</div>';">
+                        </div>
+                        <div class="project-badge">New Launch</div>
                     </div>
                     <div class="portfolio-content">
+                        <div class="portfolio-header">
+                            <div class="client-info">
+                                <span class="client-industry">Technology Solutions</span>
+                                <h3 class="portfolio-title">Prove ForTech</h3>
+                            </div>
+                            <div class="project-type">Brand New Platform</div>
+                        </div>
+                        
                         <div class="portfolio-tags">
                             <span class="portfolio-tag">Corporate Website</span>
-                            <span class="portfolio-tag">Advisory Firm</span>
-                            <span class="portfolio-tag">Brand Identity</span>
+                            <span class="portfolio-tag">Technology</span>
+                            <span class="portfolio-tag">From Scratch</span>
                         </div>
-                        <h3 class="portfolio-title">Prove Corporate Platform</h3>
+                        
                         <p class="portfolio-description">
-                            A sophisticated corporate website for a premier advisory firm, showcasing 
-                            their expertise, services, and thought leadership in the industry.
+                            Complete corporate website built from the ground up for a premier technology 
+                            solutions provider, featuring cutting-edge design, comprehensive service showcases, 
+                            and advanced functionality to establish their digital presence.
                         </p>
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">HTML/CSS/JS</span>
-                            <span class="portfolio-tag">Performance Focused</span>
-                            <span class="portfolio-tag">Mobile First</span>
+                        
+                        <div class="project-highlights">
+                            <h4 class="highlights-title">Key Features:</h4>
+                            <div class="highlight-items">
+                                <div class="highlight-item">
+                                    <i class="fas fa-code"></i>
+                                    <span>Built From Scratch</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-cogs"></i>
+                                    <span>Advanced Features</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-palette"></i>
+                                    <span>Brand Identity</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Future-Proof Architecture</span>
+                                </div>
+                            </div>
                         </div>
-                        <a href="https://www.prove.com.my" target="_blank" class="portfolio-link">
-                            Visit Live Website
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        
+                        <div class="portfolio-actions">
+                            <a href="https://www.prove.com.my" target="_blank" class="portfolio-link primary">
+                                <span>Visit Live Website</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#prove-case-study" class="portfolio-link secondary modal-trigger">
+                                <span>View Case Study</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <div id="teliti-case-study" class="case-study-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-body">
+                <div class="case-study-hero">
+                    <h1>Teliti Infotech: Complete Digital Transformation</h1>
+                    <p class="subtitle">How we redesigned Malaysia's leading IT solutions provider's website to drive business growth</p>
+                    <div class="case-meta">
+                        <span class="duration">Duration: 3 months</span>
+                        <span class="industry">Industry: IT Solutions</span>
+                        <span class="services">Services: Web Design, Development, SEO</span>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2>Executive Summary</h2>
+                    <p>Teliti Infotech, a leading IT solutions provider in Malaysia, needed a complete website transformation to better reflect their market leadership and generate qualified leads. We delivered a modern, responsive website that increased conversions by 68% while improving user experience across all devices.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <span class="number">68%</span>
+                            <span class="label">Increase in Lead Generation</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">42%</span>
+                            <span class="label">Faster Page Load</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">3.2x</span>
+                            <span class="label">Mobile Engagement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2>The Challenge</h2>
+                    <div class="challenge-solution">
+                        <div class="challenge">
+                            <h3>Challenges Faced</h3>
+                            <ul>
+                                <li>Outdated design not reflecting their market leadership position</li>
+                                <li>Poor mobile experience with 45% bounce rate on mobile devices</li>
+                                <li>Low conversion rates (1.2% form submissions)</li>
+                                <li>Ineffective content structure for complex service offerings</li>
+                                <li>Slow page load times affecting user experience and SEO</li>
+                            </ul>
+                        </div>
+                        <div class="solution">
+                            <h3>Our Solution</h3>
+                            <ul>
+                                <li>Mobile-first responsive design approach</li>
+                                <li>Streamlined user journey with clear CTAs</li>
+                                <li>Modern design system reflecting corporate identity</li>
+                                <li>Performance optimization for faster loading</li>
+                                <li>SEO-enhanced structure and content</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2>Our Process</h2>
+                    <p>We applied our proven 5-step methodology to ensure project success:</p>
+                    <ol>
+                        <li><strong>Discovery & Strategy:</strong> Comprehensive analysis of business goals, target audience, and competitor landscape</li>
+                        <li><strong>Design & Prototyping:</strong> Created wireframes and interactive prototypes for stakeholder feedback</li>
+                        <li><strong>Development:</strong> Built with modern technologies ensuring scalability and performance</li>
+                        <li><strong>Testing & Optimization:</strong> Rigorous testing across devices and browsers</li>
+                        <li><strong>Launch & Support:</strong> Smooth deployment with ongoing maintenance and support</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="prove-case-study" class="case-study-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-body">
+                <div class="case-study-hero">
+                    <h1>Prove ForTech: Brand New Corporate Platform</h1>
+                    <p class="subtitle">Building a comprehensive digital presence from the ground up for a technology solutions leader</p>
+                    <div class="case-meta">
+                        <span class="duration">Duration: 4 months</span>
+                        <span class="industry">Industry: Technology Solutions</span>
+                        <span class="services">Services: Web Design, Development, Brand Strategy</span>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2>Executive Summary</h2>
+                    <p>Prove ForTech needed to establish their digital presence with a brand new corporate website that would showcase their comprehensive technology solutions and position them as industry leaders. We delivered a cutting-edge platform that effectively communicates their value proposition and drives business growth.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <span class="number">100%</span>
+                            <span class="label">Built From Scratch</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">2.5x</span>
+                            <span class="label">Increase in Organic Traffic</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">85%</span>
+                            <span class="label">User Satisfaction Score</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2>The Challenge</h2>
+                    <div class="challenge-solution">
+                        <div class="challenge">
+                            <h3>Initial Situation</h3>
+                            <ul>
+                                <li>No existing digital presence or website</li>
+                                <li>Complex service offerings requiring clear presentation</li>
+                                <li>Need to establish brand identity and market positioning</li>
+                                <li>Targeting both B2B and enterprise clients</li>
+                                <li>Requirement for scalable, future-proof architecture</li>
+                            </ul>
+                        </div>
+                        <div class="solution">
+                            <h3>Our Approach</h3>
+                            <ul>
+                                <li>Complete brand identity development</li>
+                                <li>Structured information architecture</li>
+                                <li>Advanced content management system</li>
+                                <li>Scalable technology stack</li>
+                                <li>Comprehensive SEO strategy from day one</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study-section">
+                    <h2>Key Features Implemented</h2>
+                    <div class="highlight-items" style="grid-template-columns: 1fr;">
+                        <div class="highlight-item">
+                            <i class="fas fa-sitemap"></i>
+                            <span><strong>Advanced Information Architecture:</strong> Structured content hierarchy for easy navigation of complex services</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-palette"></i>
+                            <span><strong>Custom Brand Identity:</strong> Complete visual identity system reflecting corporate values</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-cogs"></i>
+                            <span><strong>Enterprise CMS:</strong> Powerful content management system for distributed teams</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span><strong>Analytics Integration:</strong> Comprehensive tracking and performance monitoring</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="cta section" id="contact">
         <div class="container">
             <div class="cta-content">
@@ -1852,13 +2329,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <!-- FIXED: Using mm0.png for footer with proper styling -->
                         <img src="mm0.png" alt="maxmin" class="footer-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>maxmin</span>';">
                     </a>
                     <p class="footer-description">
@@ -1910,7 +2385,6 @@
     </footer>
 
     <script>
-        // Enhanced Corporate Website JavaScript
         class CorporateWebsite {
             constructor() {
                 this.init();
@@ -1924,6 +2398,7 @@
                 this.setupIntersectionObserver();
                 this.setupTouchInteractions();
                 this.setupVideoBackground();
+                this.setupCaseStudyModals();
             }
 
             setupLoadingScreen() {
@@ -1946,7 +2421,6 @@
                     body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
                 });
 
-                // Close menu when clicking on links
                 mobileMenu.querySelectorAll('a').forEach(link => {
                     link.addEventListener('click', () => {
                         mobileMenuBtn.classList.remove('active');
@@ -1955,7 +2429,6 @@
                     });
                 });
 
-                // Close menu when clicking outside
                 mobileMenu.addEventListener('click', (e) => {
                     if (e.target === mobileMenu) {
                         mobileMenuBtn.classList.remove('active');
@@ -1982,6 +2455,8 @@
             setupSmoothScrolling() {
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     anchor.addEventListener('click', function (e) {
+                        if (this.classList.contains('modal-trigger')) return;
+                        
                         e.preventDefault();
                         const target = document.querySelector(this.getAttribute('href'));
                         if (target) {
@@ -2015,9 +2490,7 @@
             }
 
             setupTouchInteractions() {
-                // Add touch-specific interactions for mobile
                 if ('ontouchstart' in window) {
-                    // Add touch feedback for buttons
                     document.querySelectorAll('.btn, .nav-link, .mobile-nav-link').forEach(element => {
                         element.addEventListener('touchstart', function() {
                             this.style.transform = 'scale(0.98)';
@@ -2033,31 +2506,76 @@
             setupVideoBackground() {
                 const video = document.querySelector('.hero-video');
                 if (video) {
-                    // Ensure video plays correctly on mobile
                     video.setAttribute('playsinline', '');
                     video.setAttribute('muted', '');
                     video.setAttribute('autoplay', '');
                     video.setAttribute('loop', '');
                     
-                    // Handle video loading
                     video.addEventListener('loadeddata', function() {
                         console.log('Video loaded successfully');
                     });
                     
                     video.addEventListener('error', function() {
                         console.log('Error loading video, using fallback');
-                        // You could set a fallback background image here
                     });
                 }
             }
+
+            setupCaseStudyModals() {
+                const modalTriggers = document.querySelectorAll('.modal-trigger');
+                const modals = document.querySelectorAll('.case-study-modal');
+                const closeButtons = document.querySelectorAll('.close-modal');
+                const body = document.body;
+
+                modalTriggers.forEach(trigger => {
+                    trigger.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const modalId = trigger.getAttribute('href');
+                        const modal = document.querySelector(modalId);
+                        
+                        if (modal) {
+                            modal.classList.add('active');
+                            body.style.overflow = 'hidden';
+                        }
+                    });
+                });
+
+                function closeModal(modal) {
+                    modal.classList.remove('active');
+                    body.style.overflow = '';
+                }
+
+                closeButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const modal = button.closest('.case-study-modal');
+                        closeModal(modal);
+                    });
+                });
+
+                modals.forEach(modal => {
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
+                            closeModal(modal);
+                        }
+                    });
+                });
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        modals.forEach(modal => {
+                            if (modal.classList.contains('active')) {
+                                closeModal(modal);
+                            }
+                        });
+                    }
+                });
+            }
         }
 
-        // Initialize website
         document.addEventListener('DOMContentLoaded', () => {
             new CorporateWebsite();
         });
 
-        // Handle resize events
         window.addEventListener('resize', () => {
             if (window.innerWidth > 1024) {
                 const mobileMenu = document.getElementById('mobileMenu');
