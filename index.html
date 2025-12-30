@@ -3,83 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>maxmin | Corporate Website Development</title>
+    <title>maxmin | Premium Corporate Website Design</title>
     
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="wave.mp4" as="video">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="wave.mp4" as="video" type="video/mp4">
     <link rel="preload" href="mm1.png" as="image">
-    <link rel="preload" href="mm0.png" as="image">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* ===== ENHANCED CORPORATE CSS VARIABLES ===== */
         :root {
-            /* Enhanced Corporate Color Palette */
             --primary-black: #000000;
             --primary-white: #ffffff;
-            --corporate-navy: #001F3F;
-            --corporate-blue: #0056B3;
-            --accent-blue: #0074E4;
-            --light-blue: #E8F4FD;
-            --dark-gray: #2D3748;
+            --corporate-navy: #0A192F;
+            --corporate-blue: #2D5BFF;
+            --accent-blue: #64C7FF;
+            --light-blue: #F0F8FF;
+            --dark-gray: #1A202C;
             --medium-gray: #4A5568;
-            --light-gray: #F7FAFC;
+            --light-gray: #F8FAFC;
             --border-gray: #E2E8F0;
-            --success-green: #10B981;
-            --corporate-teal: #008080;
-            --corporate-gold: #D4AF37;
-            
-            /* Enhanced Gradients */
             --gradient-primary: linear-gradient(135deg, var(--corporate-blue) 0%, var(--corporate-navy) 100%);
-            --gradient-light: linear-gradient(135deg, var(--light-gray) 0%, var(--primary-white) 100%);
-            --gradient-dark: linear-gradient(135deg, var(--corporate-navy) 0%, var(--primary-black) 100%);
-            --gradient-hero: linear-gradient(135deg, rgba(0, 31, 63, 0.85) 0%, rgba(0, 86, 179, 0.75) 100%);
-            --gradient-teal: linear-gradient(135deg, var(--corporate-teal) 0%, var(--corporate-blue) 100%);
+            --gradient-gold: linear-gradient(135deg, #FFD166 0%, #FFA62E 100%);
             --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-            --gradient-gold: linear-gradient(135deg, var(--corporate-gold) 0%, #E6C260 100%);
-            
-            /* Enhanced Shadows */
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            --shadow-glow: 0 0 20px rgba(0, 86, 179, 0.15);
-            
-            /* Enhanced Transitions */
-            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            
-            /* Enhanced Spacing System */
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 1.5rem;
-            --space-lg: 2rem;
-            --space-xl: 3rem;
-            --space-2xl: 4rem;
-            --space-3xl: 6rem;
-            --space-4xl: 8rem;
-            
-            /* Enhanced Border Radius */
-            --radius-sm: 4px;
-            --radius: 6px;
-            --radius-lg: 8px;
-            --radius-xl: 12px;
-            --radius-2xl: 16px;
-            --radius-3xl: 24px;
-            --radius-full: 50%;
-            
-            /* Layout */
-            --max-width: 1280px;
-            --header-height: 80px;
-            --header-height-mobile: 70px;
+            --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.16);
+            --shadow-glow: 0 0 60px rgba(45, 91, 255, 0.25);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 32px;
+            --radius-xl: 48px;
         }
 
         * {
@@ -93,253 +53,150 @@
             font-size: 16px;
         }
 
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: var(--dark-gray);
             background: var(--primary-white);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            font-weight: 400;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ===== ENHANCED TYPOGRAPHY ===== */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 600;
-            line-height: 1.3;
-            margin-bottom: var(--space-md);
-            color: var(--corporate-navy);
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        h2 {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 700;
-            letter-spacing: -0.01em;
-        }
-
-        h3 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-        }
-
-        p {
-            margin-bottom: var(--space-md);
-            color: var(--medium-gray);
-        }
-
-        /* ===== ENHANCED LAYOUT UTILITIES ===== */
         .container {
-            max-width: var(--max-width);
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--space-lg);
-        }
-
-        .container-wide {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 var(--space-lg);
+            padding: 0 2rem;
         }
 
         @media (max-width: 768px) {
-            .container, .container-wide {
-                padding: 0 var(--space-md);
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
             }
         }
 
         .section {
-            padding: var(--space-3xl) 0;
+            padding: 6rem 0;
+            position: relative;
         }
 
-        .section-sm {
-            padding: var(--space-2xl) 0;
+        @media (max-width: 1024px) {
+            .section {
+                padding: 4rem 0;
+            }
         }
 
         @media (max-width: 768px) {
             .section {
-                padding: var(--space-2xl) 0;
-            }
-            
-            .section-sm {
-                padding: var(--space-xl) 0;
+                padding: 3rem 0;
             }
         }
 
-        /* ===== ENHANCED HEADER ===== */
+        @media (max-width: 480px) {
+            .section {
+                padding: 2.5rem 0;
+            }
+        }
+
+        /* Enhanced Header with Mobile Menu */
         .header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.98);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            transition: var(--transition-smooth);
-            height: var(--header-height);
-            box-shadow: var(--shadow-sm);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 1.25rem 0;
+            transition: var(--transition);
         }
 
         .header.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: var(--shadow-lg);
-            height: 70px;
+            padding: 1rem 0;
+            box-shadow: var(--shadow-md);
         }
 
         .nav-container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--space-lg);
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            height: 100%;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         @media (max-width: 768px) {
-            .header {
-                height: var(--header-height-mobile);
-            }
-            
             .nav-container {
-                padding: 0 var(--space-md);
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 1rem;
             }
         }
 
         .logo {
-            z-index: 1001;
             display: flex;
             align-items: center;
-            text-decoration: none;
+            z-index: 1002;
         }
 
         .logo-img {
             height: 40px;
             width: auto;
-            transition: var(--transition-fast);
+            transition: var(--transition);
         }
 
         .header.scrolled .logo-img {
-            height: 35px;
+            height: 36px;
         }
 
         @media (max-width: 768px) {
             .logo-img {
-                height: 35px;
+                height: 36px;
             }
             
             .header.scrolled .logo-img {
-                height: 30px;
+                height: 32px;
             }
         }
 
-        /* Enhanced Desktop Navigation */
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: var(--space-xl);
-            align-items: center;
-            margin: 0;
-        }
-
-        @media (max-width: 1024px) {
-            .nav-menu {
-                display: none;
-            }
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--dark-gray);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition-fast);
-            padding: var(--space-sm) 0;
-            position: relative;
-        }
-
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--corporate-blue);
-            transition: var(--transition-smooth);
-        }
-
-        .nav-link:hover {
-            color: var(--corporate-blue);
-        }
-
-        .nav-link:hover:after {
-            width: 100%;
-        }
-
-        .nav-cta {
-            background: var(--gradient-primary);
-            color: var(--primary-white);
-            padding: var(--space-sm) var(--space-lg);
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition-smooth);
-            font-size: 0.9rem;
-            box-shadow: var(--shadow-sm);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-cta:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: var(--transition-slow);
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .nav-cta:hover:before {
-            left: 100%;
-        }
-
-        /* Enhanced Mobile Menu */
+        /* Mobile Menu Button */
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            cursor: pointer;
-            padding: var(--space-sm);
-            z-index: 1001;
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             position: relative;
-            border-radius: var(--radius);
-            transition: var(--transition-fast);
+            cursor: pointer;
+            z-index: 1002;
+            padding: 0;
         }
 
-        .mobile-menu-btn:hover {
-            background: var(--light-blue);
-        }
-
-        @media (max-width: 1024px) {
+        @media (max-width: 768px) {
             .mobile-menu-btn {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                gap: 6px;
             }
         }
 
@@ -347,10 +204,9 @@
             display: block;
             width: 24px;
             height: 2px;
-            background: var(--dark-gray);
-            margin: 3px 0;
-            transition: var(--transition-smooth);
-            transform-origin: center;
+            background: var(--corporate-navy);
+            transition: var(--transition);
+            border-radius: 2px;
         }
 
         .mobile-menu-btn.active span:nth-child(1) {
@@ -365,6 +221,83 @@
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+        }
+
+        .nav-link {
+            color: var(--corporate-navy);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--corporate-blue);
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gradient-primary);
+            color: var(--primary-white);
+            padding: 0.75rem 1.75rem;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: var(--transition);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-cta:hover:before {
+            left: 100%;
+        }
+
+        /* Mobile Menu */
         .mobile-menu {
             position: fixed;
             top: 0;
@@ -372,28 +305,33 @@
             right: 0;
             bottom: 0;
             background: var(--primary-white);
-            transform: translateX(-100%);
-            transition: var(--transition-smooth);
-            padding: calc(var(--header-height-mobile) + var(--space-lg)) var(--space-lg) var(--space-lg);
-            overflow-y: auto;
-            z-index: 999;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+            padding: 6rem 2rem 2rem;
             display: flex;
             flex-direction: column;
+            overflow-y: auto;
         }
 
         .mobile-menu.active {
             transform: translateX(0);
         }
 
+        @media (min-width: 769px) {
+            .mobile-menu {
+                display: none;
+            }
+        }
+
         .mobile-nav-link {
-            display: block;
-            padding: var(--space-md) 0;
+            padding: 1rem 0;
+            color: var(--corporate-navy);
             text-decoration: none;
-            color: var(--dark-gray);
             font-weight: 500;
             font-size: 1.1rem;
-            border-bottom: 1px solid var(--border-gray);
-            transition: var(--transition-fast);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
             position: relative;
             overflow: hidden;
         }
@@ -406,12 +344,13 @@
             width: 100%;
             height: 100%;
             background: var(--light-blue);
-            transition: var(--transition-smooth);
+            transition: var(--transition);
             z-index: -1;
         }
 
         .mobile-nav-link:hover {
             color: var(--corporate-blue);
+            padding-left: 1rem;
         }
 
         .mobile-nav-link:hover:before {
@@ -419,16 +358,16 @@
         }
 
         .mobile-nav-cta {
-            display: block;
-            margin-top: var(--space-lg);
+            margin-top: 2rem;
             background: var(--gradient-primary);
             color: var(--primary-white);
-            padding: var(--space-md) var(--space-lg);
-            border-radius: var(--radius);
+            padding: 1rem 2rem;
+            border-radius: var(--radius-sm);
             text-decoration: none;
             font-weight: 600;
             text-align: center;
-            transition: var(--transition-smooth);
+            font-size: 1rem;
+            transition: var(--transition);
             box-shadow: var(--shadow-sm);
         }
 
@@ -437,15 +376,22 @@
             box-shadow: var(--shadow-md);
         }
 
-        /* ===== ENHANCED HERO SECTION WITH VIDEO BACKGROUND ===== */
+        /* Cinematic Hero with Video - FIXED TEXT OVERFLOW */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
-            color: var(--primary-white);
-            padding: var(--header-height) var(--space-lg) var(--space-3xl);
             overflow: hidden;
+            color: var(--primary-white);
+            padding-top: 5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 90vh;
+                padding-top: 4rem;
+            }
         }
 
         .hero-video {
@@ -455,110 +401,137 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -2;
+            z-index: 1;
         }
 
         .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-hero);
-            z-index: -1;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: var(--header-height-mobile) var(--space-md) var(--space-2xl);
-                text-align: center;
-                min-height: 90vh;
-            }
-            
-            /* Optimize video for mobile */
-            .hero-video {
-                object-position: center;
-            }
-        }
-
-        .hero-content {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            width: 100%;
-            position: relative;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(10, 25, 47, 0.9) 0%,
+                rgba(10, 25, 47, 0.7) 50%,
+                rgba(45, 91, 255, 0.3) 100%);
             z-index: 2;
         }
 
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 850px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 1rem;
+        }
+
         .hero-badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
             background: var(--gradient-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             color: var(--primary-white);
-            padding: var(--space-xs) var(--space-md);
-            border-radius: var(--radius);
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: var(--space-lg);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            animation: slideInUp 0.8s ease-out;
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @media (max-width: 480px) {
+            .hero-badge {
+                font-size: 0.7rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        .hero-badge i {
+            color: var(--accent-blue);
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 700;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
             line-height: 1.2;
-            margin-bottom: var(--space-lg);
+            margin-bottom: 1.5rem;
             color: var(--primary-white);
-            max-width: 800px;
-            animation: slideInUp 0.8s ease-out 0.2s both;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.8s ease-out 0.2s both;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+                line-height: 1.15;
+                margin-bottom: 1rem;
+            }
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: var(--space-2xl);
-            max-width: 600px;
+            font-size: clamp(0.95rem, 2vw, 1.15rem);
             line-height: 1.6;
-            animation: slideInUp 0.8s ease-out 0.4s both;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            animation: slideUp 0.8s ease-out 0.4s both;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 480px) {
             .hero-subtitle {
-                margin-left: auto;
-                margin-right: auto;
-                font-size: 1.125rem;
+                font-size: 0.95rem;
+                line-height: 1.5;
+                margin-bottom: 2rem;
             }
         }
 
         .hero-actions {
             display: flex;
-            gap: var(--space-md);
+            gap: 1rem;
             flex-wrap: wrap;
-            animation: slideInUp 0.8s ease-out 0.6s both;
+            animation: slideUp 0.8s ease-out 0.6s both;
         }
 
         @media (max-width: 768px) {
             .hero-actions {
-                justify-content: center;
+                flex-direction: column;
+                gap: 1rem;
             }
         }
 
         .btn {
-            padding: var(--space-md) var(--space-xl);
-            border-radius: var(--radius);
+            padding: 1rem 2rem;
+            border-radius: var(--radius-sm);
             text-decoration: none;
             font-weight: 600;
-            transition: var(--transition-smooth);
-            border: 1px solid transparent;
+            font-size: 0.95rem;
+            transition: var(--transition);
             display: inline-flex;
             align-items: center;
-            gap: var(--space-sm);
-            font-size: 0.95rem;
+            justify-content: center;
+            gap: 0.75rem;
+            border: none;
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            text-align: center;
+            min-height: 50px;
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.9rem;
+                min-height: 46px;
+            }
         }
 
         .btn:before {
@@ -569,46 +542,48 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: var(--transition-slow);
+            transition: var(--transition);
         }
 
         .btn:hover:before {
             left: 100%;
         }
 
-        @media (max-width: 480px) {
-            .btn {
-                width: 100%;
-                justify-content: center;
-                max-width: 280px;
-            }
-        }
-
         .btn-primary {
             background: var(--primary-white);
-            color: var(--corporate-blue);
+            color: var(--corporate-navy);
+            box-shadow: var(--shadow-md);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: var(--shadow-xl);
         }
 
         .btn-secondary {
             background: transparent;
             color: var(--primary-white);
-            border-color: var(--primary-white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .btn-secondary:hover {
-            background: var(--primary-white);
-            color: var(--corporate-blue);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-white);
+            transform: translateY(-3px);
         }
 
-        /* ===== COMPACT SERVICES SECTION ===== */
+        @media (max-width: 768px) {
+            .hero-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Elegant Services Section */
         .services {
-            background: var(--primary-white);
+            background: var(--light-gray);
             position: relative;
+            overflow: hidden;
         }
 
         .services:before {
@@ -624,64 +599,97 @@
         .section-header {
             text-align: center;
             max-width: 800px;
-            margin: 0 auto var(--space-xl);
+            margin: 0 auto 4rem;
+            padding: 0 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .section-header {
+                margin-bottom: 3rem;
+            }
         }
 
         .section-label {
             display: inline-block;
             color: var(--corporate-blue);
             font-weight: 600;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: var(--space-md);
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-label:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: var(--gradient-primary);
         }
 
         .section-title {
-            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-            font-weight: 700;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
             color: var(--corporate-navy);
             line-height: 1.2;
-            margin-bottom: var(--space-lg);
+            margin-bottom: 1.5rem;
+            word-wrap: break-word;
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
         }
 
         .section-subtitle {
-            font-size: 1.125rem;
+            font-size: 1rem;
             color: var(--medium-gray);
             line-height: 1.6;
+            word-wrap: break-word;
+        }
+
+        @media (max-width: 480px) {
+            .section-subtitle {
+                font-size: 0.95rem;
+            }
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-lg);
-        }
-
-        @media (max-width: 1024px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
         }
 
         @media (max-width: 768px) {
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
         }
 
         .service-card {
             background: var(--primary-white);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            transition: var(--transition-smooth);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            transition: var(--transition);
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-gray);
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
             height: 100%;
-            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .service-card {
+                padding: 1.5rem;
+            }
         }
 
         .service-card:before {
@@ -689,509 +697,659 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 4px;
+            width: 100%;
             height: 100%;
             background: var(--gradient-primary);
-            transform: scaleY(0);
-            transition: var(--transition-smooth);
-            transform-origin: top;
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-xl);
             border-color: var(--corporate-blue);
         }
 
         .service-card:hover:before {
-            transform: scaleY(1);
+            opacity: 0.02;
         }
 
         .service-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--light-blue);
-            border-radius: var(--radius-lg);
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto var(--space-md);
-            color: var(--corporate-blue);
-            font-size: 1.25rem;
-            transition: var(--transition-smooth);
+            margin-bottom: 1.5rem;
+            color: var(--primary-white);
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 480px) {
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.25rem;
+                margin-bottom: 1.25rem;
+            }
         }
 
         .service-card:hover .service-icon {
-            background: var(--gradient-primary);
-            color: var(--primary-white);
-            transform: scale(1.1);
+            transform: rotateY(180deg);
+            box-shadow: var(--shadow-glow);
         }
 
         .service-title {
             font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: var(--space-sm);
+            font-weight: 700;
+            margin-bottom: 1rem;
             color: var(--corporate-navy);
-            line-height: 1.3;
+            position: relative;
+            z-index: 2;
+            word-wrap: break-word;
+        }
+
+        @media (max-width: 480px) {
+            .service-title {
+                font-size: 1.15rem;
+            }
         }
 
         .service-description {
             color: var(--medium-gray);
-            font-size: 0.875rem;
-            line-height: 1.5;
-            margin-bottom: var(--space-md);
-            flex-grow: 1;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+            word-wrap: break-word;
+        }
+
+        @media (max-width: 480px) {
+            .service-description {
+                font-size: 0.95rem;
+                margin-bottom: 1.25rem;
+            }
         }
 
         .service-features {
             list-style: none;
-            margin-top: var(--space-sm);
+            position: relative;
+            z-index: 2;
         }
 
         .service-feature {
-            padding: var(--space-xs) 0;
-            color: var(--medium-gray);
-            font-size: 0.75rem;
+            padding: 0.5rem 0;
+            color: var(--corporate-blue);
+            font-weight: 500;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: var(--space-xs);
-            transition: var(--transition-fast);
+            gap: 0.75rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            word-wrap: break-word;
         }
 
-        .service-feature:hover {
-            color: var(--corporate-blue);
+        .service-feature:last-child {
+            border-bottom: none;
         }
 
         .service-feature:before {
-            content: "•";
-            color: var(--corporate-blue);
+            content: "→";
+            color: var(--accent-blue);
             font-weight: 600;
+            transition: var(--transition);
+            flex-shrink: 0;
         }
 
-        /* ===== COMPACT PROCESS SECTION ===== */
-        .process {
+        .service-feature:hover {
+            padding-left: 0.5rem;
+        }
+
+        .service-feature:hover:before {
+            transform: translateX(5px);
+        }
+
+        /* Showcase Section */
+        .showcase {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .showcase-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(45, 91, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(100, 199, 255, 0.03) 0%, transparent 50%);
+        }
+
+        .showcase-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 1024px) {
+            .showcase-content {
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .showcase-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .showcase-text h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--corporate-navy);
+            line-height: 1.2;
+            word-wrap: break-word;
+        }
+
+        @media (max-width: 480px) {
+            .showcase-text h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .showcase-text p {
+            font-size: 1rem;
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            word-wrap: break-word;
+        }
+
+        @media (max-width: 480px) {
+            .showcase-text p {
+                font-size: 0.95rem;
+            }
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .benefit-item {
+            padding: 0.75rem 0;
+            font-size: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            color: var(--corporate-navy);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            word-wrap: break-word;
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+
+        .benefit-item i {
+            color: var(--corporate-blue);
+            font-size: 1.1rem;
+            width: 20px;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        @media (max-width: 480px) {
+            .benefit-item {
+                font-size: 0.95rem;
+            }
+        }
+
+        .showcase-visual {
+            position: relative;
+            padding: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .showcase-visual {
+                padding: 0;
+            }
+        }
+
+        .website-mockup {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            transition: var(--transition);
+            max-width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .website-mockup {
+                transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+            }
+        }
+
+        .website-mockup:hover {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .mockup-header {
+            height: 40px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            gap: 0.75rem;
+        }
+
+        .mockup-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .mockup-content {
+            height: 250px;
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--primary-white) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .mockup-content {
+                height: 200px;
+            }
+        }
+
+        .mockup-content:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 49%, var(--corporate-blue) 49%, var(--corporate-blue) 51%, transparent 51%) 0 0/20px 20px,
+                linear-gradient(-45deg, transparent 49%, var(--corporate-blue) 49%, var(--corporate-blue) 51%, transparent 51%) 0 0/20px 20px;
+            opacity: 0.05;
+        }
+
+        .mockup-logo {
+            max-width: 60%;
+            max-height: 80px;
+            opacity: 0.8;
+            filter: grayscale(100%);
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+        }
+
+        .website-mockup:hover .mockup-logo {
+            opacity: 1;
+            filter: grayscale(0%) brightness(1.1);
+            transform: scale(1.05);
+        }
+
+        /* Portfolio Gallery */
+        .portfolio {
             background: var(--light-gray);
             position: relative;
             overflow: hidden;
         }
-        
-        .process:before {
-            content: '';
+
+        .portfolio-bg {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border-gray), transparent);
-        }
-        
-        .process-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto var(--space-xl);
-        }
-        
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: var(--space-md);
-            position: relative;
-        }
-        
-        @media (max-width: 1024px) {
-            .process-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: var(--space-lg);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .process-grid {
-                grid-template-columns: 1fr;
-                gap: var(--space-lg);
-            }
-        }
-        
-        .process-step {
-            background: var(--primary-white);
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-gray);
-            transition: var(--transition-smooth);
-            text-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-        }
-        
-        .process-step:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--corporate-blue);
-        }
-        
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-white);
-            font-weight: 700;
-            font-size: 1.125rem;
-            margin-bottom: var(--space-md);
-            box-shadow: var(--shadow-md);
-            transition: var(--transition-smooth);
-        }
-        
-        .process-step:hover .step-number {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-glow);
-        }
-        
-        .step-icon {
-            width: 24px;
-            height: 24px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-white);
-            font-size: 0.75rem;
-            margin-bottom: var(--space-sm);
-        }
-        
-        .step-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: var(--space-sm);
-            color: var(--corporate-navy);
-            line-height: 1.3;
-        }
-        
-        .step-description {
-            color: var(--medium-gray);
-            font-size: 0.875rem;
-            line-height: 1.5;
-            margin-bottom: var(--space-sm);
-            flex-grow: 1;
-        }
-        
-        .step-features {
-            list-style: none;
-            margin-top: var(--space-sm);
-            width: 100%;
-        }
-        
-        .step-feature {
-            padding: var(--space-xs) 0;
-            color: var(--medium-gray);
-            font-size: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-xs);
-            transition: var(--transition-fast);
-        }
-        
-        .step-feature:hover {
-            color: var(--corporate-blue);
-        }
-        
-        .step-feature:before {
-            content: "•";
-            color: var(--corporate-blue);
-            font-weight: 600;
-        }
-
-        /* ===== ENHANCED PORTFOLIO SECTION ===== */
-        .portfolio {
-            background: var(--light-gray);
-            position: relative;
-        }
-
-        .portfolio:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border-gray), transparent);
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 10% 10%, rgba(100, 199, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(45, 91, 255, 0.05) 0%, transparent 40%);
         }
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-xl);
-            max-width: 1000px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 768px) {
             .portfolio-grid {
                 grid-template-columns: 1fr;
-                gap: var(--space-lg);
-                max-width: 600px;
+                gap: 1.5rem;
             }
         }
 
         .portfolio-card {
             background: var(--primary-white);
-            border-radius: var(--radius-xl);
+            border-radius: var(--radius-md);
             overflow: hidden;
-            transition: var(--transition-smooth);
-            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
             border: 1px solid var(--border-gray);
             position: relative;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
         }
 
         .portfolio-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-10px) scale(1.02);
             box-shadow: var(--shadow-xl);
-            border-color: var(--corporate-blue);
         }
 
         .portfolio-image {
-            width: 100%;
             height: 200px;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--light-gray) 0%, var(--primary-white) 100%);
-            padding: var(--space-xl);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .client-logo-wrapper {
-            position: relative;
-            z-index: 2;
-            text-align: center;
+        @media (max-width: 480px) {
+            .portfolio-image {
+                height: 160px;
+                padding: 1.5rem;
+            }
+        }
+
+        .portfolio-image:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 65%, rgba(255,255,255,0.3) 75%, transparent 85%),
+                linear-gradient(-45deg, transparent 65%, rgba(255,255,255,0.3) 75%, transparent 85%);
+            background-size: 400% 400%;
+            animation: shine 3s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+            0% { background-position: -100% -100%; }
+            100% { background-position: 100% 100%; }
         }
 
         .portfolio-logo {
-            max-width: 100%;
-            max-height: 80px;
-            object-fit: contain;
-            transition: var(--transition-smooth);
-            filter: grayscale(100%);
-            opacity: 0.8;
+            max-height: 70px;
+            max-width: 70%;
+            filter: grayscale(100%) contrast(0.9);
+            transition: var(--transition);
+            z-index: 2;
+            position: relative;
         }
 
         .portfolio-card:hover .portfolio-logo {
+            filter: grayscale(0%) contrast(1);
             transform: scale(1.05);
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-
-        .project-badge {
-            position: absolute;
-            top: var(--space-md);
-            right: var(--space-md);
-            background: var(--gradient-primary);
-            color: var(--primary-white);
-            padding: 6px 12px;
-            border-radius: var(--radius-sm);
-            font-size: 0.75rem;
-            font-weight: 600;
-            z-index: 3;
         }
 
         .portfolio-content {
-            padding: var(--space-xl);
-            position: relative;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+            padding: 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-content {
+                padding: 1.25rem;
+            }
         }
 
         .portfolio-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: var(--space-md);
-            gap: var(--space-md);
-        }
-
-        .client-info {
-            flex: 1;
-        }
-
-        .client-industry {
-            color: var(--corporate-blue);
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 4px;
-            display: block;
-        }
-
-        .portfolio-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0;
-            color: var(--corporate-navy);
-            line-height: 1.2;
-        }
-
-        .project-type {
-            background: var(--light-blue);
-            color: var(--corporate-blue);
-            padding: 6px 12px;
-            border-radius: var(--radius-sm);
-            font-size: 0.8rem;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            gap: var(--space-xs);
-            margin-bottom: var(--space-lg);
+            margin-bottom: 1rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
-        .portfolio-tag {
-            background: var(--light-gray);
-            color: var(--medium-gray);
-            padding: 6px 12px;
-            border-radius: var(--radius-sm);
-            font-size: 0.8rem;
-            font-weight: 500;
-            transition: var(--transition-fast);
-            border: 1px solid var(--border-gray);
+        .portfolio-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--corporate-navy);
+            margin-bottom: 0.5rem;
+            word-wrap: break-word;
         }
 
-        .portfolio-card:hover .portfolio-tag {
-            background: var(--corporate-blue);
-            color: var(--primary-white);
-            border-color: var(--corporate-blue);
+        @media (max-width: 480px) {
+            .portfolio-title {
+                font-size: 1.15rem;
+            }
+        }
+
+        .portfolio-industry {
+            color: var(--corporate-blue);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: block;
+        }
+
+        .portfolio-tag {
+            background: var(--light-blue);
+            color: var(--corporate-blue);
+            padding: 0.375rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .portfolio-description {
             color: var(--medium-gray);
-            margin-bottom: var(--space-lg);
+            margin-bottom: 1.5rem;
             line-height: 1.6;
             font-size: 0.95rem;
-        }
-
-        .project-highlights {
-            margin-bottom: var(--space-xl);
-        }
-
-        .highlights-title {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--corporate-navy);
-            margin-bottom: var(--space-sm);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .highlight-items {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-sm);
+            word-wrap: break-word;
         }
 
         @media (max-width: 480px) {
-            .highlight-items {
-                grid-template-columns: 1fr;
+            .portfolio-description {
+                font-size: 0.9rem;
             }
         }
 
-        .highlight-item {
+        .portfolio-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-features {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+        }
+
+        .feature-item {
             display: flex;
             align-items: center;
-            gap: var(--space-xs);
+            gap: 0.75rem;
             color: var(--medium-gray);
             font-size: 0.85rem;
+            word-wrap: break-word;
         }
 
-        .highlight-item i {
+        .feature-item i {
             color: var(--corporate-blue);
+            font-size: 0.9rem;
             width: 16px;
+            flex-shrink: 0;
             text-align: center;
-            font-size: 0.8rem;
         }
 
-        .portfolio-actions {
-            display: flex;
-            gap: var(--space-md);
-            margin-top: auto;
+        /* Process Section - FIXED TEXT OVERFLOW */
+        .process {
+            position: relative;
+            overflow: hidden;
         }
 
-        @media (max-width: 480px) {
-            .portfolio-actions {
-                flex-direction: column;
+        .process-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--primary-white) 100%);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
             }
         }
 
-        .portfolio-link {
-            display: inline-flex;
+        @media (max-width: 480px) {
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            padding: 0 0.5rem;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
             align-items: center;
-            gap: var(--space-xs);
-            padding: var(--space-sm) var(--space-md);
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: var(--transition-smooth);
-            border: 1px solid transparent;
-        }
-
-        .portfolio-link.primary {
-            background: var(--corporate-blue);
-            color: var(--primary-white);
-            flex: 1;
             justify-content: center;
-        }
-
-        .portfolio-link.primary:hover {
-            background: var(--corporate-navy);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .portfolio-link.secondary {
-            background: transparent;
-            color: var(--corporate-blue);
-            border-color: var(--corporate-blue);
-        }
-
-        .portfolio-link.secondary:hover {
-            background: var(--corporate-blue);
             color: var(--primary-white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* ===== ENHANCED CTA SECTION ===== */
+        @media (max-width: 480px) {
+            .step-number {
+                width: 70px;
+                height: 70px;
+                font-size: 1.25rem;
+                margin-bottom: 1.25rem;
+            }
+        }
+
+        .step-number:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: var(--transition);
+        }
+
+        .process-step:hover .step-number {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .process-step:hover .step-number:before {
+            left: 100%;
+        }
+
+        .step-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--corporate-navy);
+            word-wrap: break-word;
+            line-height: 1.3;
+        }
+
+        @media (max-width: 480px) {
+            .step-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        .step-description {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            word-wrap: break-word;
+            max-width: 220px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 480px) {
+            .step-description {
+                font-size: 0.85rem;
+                max-width: none;
+            }
+        }
+
+        /* Elegant CTA */
         .cta {
-            background: var(--light-gray);
+            background: var(--gradient-primary);
+            color: var(--primary-white);
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .cta:before {
-            content: '';
+        .cta-bg {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border-gray), transparent);
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
         }
 
         .cta-content {
@@ -1199,84 +1357,100 @@
             margin: 0 auto;
             position: relative;
             z-index: 2;
+            padding: 0 1rem;
         }
 
         .cta-title {
-            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-            font-weight: 700;
-            margin-bottom: var(--space-lg);
-            color: var(--corporate-navy);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--primary-white);
+            line-height: 1.2;
+            word-wrap: break-word;
+        }
+
+        @media (max-width: 480px) {
+            .cta-title {
+                font-size: 1.5rem;
+            }
         }
 
         .cta-subtitle {
-            font-size: 1.125rem;
-            margin-bottom: var(--space-xl);
-            color: var(--medium-gray);
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
             line-height: 1.6;
+            word-wrap: break-word;
         }
 
-        .cta-actions {
-            display: flex;
-            gap: var(--space-md);
-            justify-content: center;
-            flex-wrap: wrap;
+        @media (max-width: 480px) {
+            .cta-subtitle {
+                font-size: 0.95rem;
+            }
         }
 
-        .btn-light {
-            background: var(--corporate-blue);
-            color: var(--primary-white);
-        }
-
-        .btn-light:hover {
-            transform: translateY(-2px);
+        .cta .btn {
+            background: var(--primary-white);
+            color: var(--corporate-navy);
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
             box-shadow: var(--shadow-lg);
+            margin: 0 auto;
+            display: inline-flex;
         }
 
-        .btn-outline-light {
-            background: transparent;
-            color: var(--corporate-blue);
-            border-color: var(--corporate-blue);
+        @media (max-width: 480px) {
+            .cta .btn {
+                padding: 0.875rem 2rem;
+                width: 100%;
+                max-width: 280px;
+            }
         }
 
-        .btn-outline-light:hover {
-            background: var(--corporate-blue);
-            color: var(--primary-white);
+        .cta .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-xl);
         }
 
-        /* ===== ENHANCED FOOTER ===== */
+        /* Sophisticated Footer */
         .footer {
             background: var(--corporate-navy);
             color: var(--primary-white);
             position: relative;
+            overflow: hidden;
         }
 
-        .footer:before {
-            content: '';
+        .footer-bg {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(45, 91, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(100, 199, 255, 0.05) 0%, transparent 50%);
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: var(--space-xl);
-            padding: var(--space-2xl) 0;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            padding: 3rem 0 2rem;
+            position: relative;
+            z-index: 2;
         }
 
         @media (max-width: 1024px) {
             .footer-content {
                 grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
             }
         }
 
         @media (max-width: 768px) {
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: var(--space-lg);
+                gap: 2rem;
             }
         }
 
@@ -1287,96 +1461,39 @@
 
         .footer-brand .logo {
             color: var(--primary-white);
-            margin-bottom: var(--space-lg);
-            display: flex;
-            align-items: center;
+            margin-bottom: 1.5rem;
         }
 
-        /* FIXED FOOTER LOGO STYLING - Using original code */
         .footer-logo {
-            height: 60px;
+            height: 40px;
             width: auto;
-            /* Removed the problematic filter that was making it white */
         }
 
         .footer-description {
             color: rgba(255, 255, 255, 0.7);
             line-height: 1.6;
-            margin-bottom: var(--space-lg);
+            margin-bottom: 1.5rem;
             font-size: 0.95rem;
-        }
-
-        .footer-heading {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: var(--space-lg);
-            color: var(--primary-white);
-            position: relative;
-        }
-
-        .footer-heading:after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background: var(--corporate-blue);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-link {
-            margin-bottom: var(--space-sm);
-        }
-
-        .footer-link a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: var(--transition-fast);
-            font-size: 0.9rem;
-            display: inline-block;
-            position: relative;
-        }
-
-        .footer-link a:after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--primary-white);
-            transition: var(--transition-smooth);
-        }
-
-        .footer-link a:hover {
-            color: var(--primary-white);
-        }
-
-        .footer-link a:hover:after {
-            width: 100%;
+            word-wrap: break-word;
         }
 
         .social-links {
             display: flex;
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
+            gap: 0.75rem;
+            margin-top: 1rem;
         }
 
         .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
             background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary-white);
             text-decoration: none;
-            transition: var(--transition-smooth);
+            transition: var(--transition);
             position: relative;
             overflow: hidden;
         }
@@ -1389,7 +1506,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: var(--transition-slow);
+            transition: var(--transition);
         }
 
         .social-link:hover {
@@ -1401,19 +1518,74 @@
             left: 100%;
         }
 
+        .footer-heading {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--primary-white);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-heading:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--corporate-blue);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-link a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-link a:hover {
+            color: var(--primary-white);
+            transform: translateX(5px);
+        }
+
+        .footer-link a:before {
+            content: '→';
+            font-size: 0.75rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .footer-link a:hover:before {
+            opacity: 1;
+        }
+
         .footer-bottom {
-            padding: var(--space-lg) 0;
+            padding: 1.5rem 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
             color: rgba(255, 255, 255, 0.5);
-            font-size: 0.875rem;
+            font-size: 0.8rem;
+            position: relative;
+            z-index: 2;
         }
 
-        /* ===== ENHANCED ANIMATIONS ===== */
-        @keyframes slideInUp {
+        /* Animations */
+        @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -1429,23 +1601,12 @@
                 opacity: 1;
             }
         }
-        
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
 
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .fade-in.visible {
@@ -1453,45 +1614,19 @@
             transform: translateY(0);
         }
 
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .slide-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        /* ===== ENHANCED LOADING ANIMATION ===== */
+        /* Loading Animation */
         .loading {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--primary-white);
+            background: var(--corporate-navy);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
         }
 
         .loading.hidden {
@@ -1499,13 +1634,34 @@
             visibility: hidden;
         }
 
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid var(--light-blue);
-            border-top: 4px solid var(--corporate-blue);
+        .loading-logo {
+            width: 80px;
+            height: 80px;
+            position: relative;
+        }
+
+        .loading-logo:before,
+        .loading-logo:after {
+            content: '';
+            position: absolute;
+            border: 2px solid transparent;
             border-radius: 50%;
+        }
+
+        .loading-logo:before {
+            width: 100%;
+            height: 100%;
+            border-top-color: var(--corporate-blue);
             animation: spin 1s linear infinite;
+        }
+
+        .loading-logo:after {
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+            border-bottom-color: var(--accent-blue);
+            animation: spin 1s linear infinite reverse;
         }
 
         @keyframes spin {
@@ -1513,43 +1669,26 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* ===== ENHANCED MOBILE-SPECIFIC STYLES ===== */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
+        /* Mobile Optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .service-card:hover,
+            .portfolio-card:hover,
+            .website-mockup:hover {
+                transform: none;
             }
             
-            h2 {
-                font-size: 1.75rem;
+            .service-card:active,
+            .portfolio-card:active {
+                transform: scale(0.98);
             }
             
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .service-card, .portfolio-card {
-                padding: var(--space-lg);
-            }
-            
-            .btn {
-                padding: var(--space-md) var(--space-lg);
-            }
-            
-            /* Mobile-specific touch improvements */
-            .btn, .nav-link, .mobile-nav-link {
-                -webkit-tap-highlight-color: transparent;
-            }
-            
-            .service-card, .portfolio-card {
-                -webkit-tap-highlight-color: rgba(0, 86, 179, 0.1);
+            .nav-cta:active,
+            .btn:active {
+                transform: scale(0.98);
             }
         }
 
-        /* ===== ENHANCED ACCESSIBILITY ===== */
+        /* Reduce motion */
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
@@ -1560,8 +1699,18 @@
             .hero-video {
                 display: none;
             }
+            
+            .hero {
+                background: var(--corporate-navy);
+            }
+            
+            .fade-in {
+                opacity: 1;
+                transform: none;
+            }
         }
 
+        /* Accessibility */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -1573,125 +1722,136 @@
             white-space: nowrap;
             border: 0;
         }
-        
-        /* ===== ENHANCED FOCUS STYLES ===== */
+
+        /* Focus styles */
         button:focus-visible,
         a:focus-visible {
             outline: 2px solid var(--corporate-blue);
-            outline-offset: 2px;
+            outline-offset: 3px;
         }
     </style>
 </head>
 <body>
     <!-- Loading Screen -->
     <div class="loading" id="loading">
-        <div class="loading-spinner"></div>
+        <div class="loading-logo"></div>
     </div>
 
-    <!-- Header -->
+    <!-- Enhanced Header with Mobile Menu -->
     <header class="header" id="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">
-                <!-- Using your actual logo file mm1.png (900x300) -->
-                <img src="mm1.png" alt="maxmin" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>maxmin</span>';">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="mm1.png" alt="maxmin" class="logo-img">
             </a>
             
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#process" class="nav-link">Process</a></li>
-                <li><a href="#portfolio" class="nav-link">Our Work</a></li>
-                <li><a href="#contact" class="nav-cta">Get Started</a></li>
-            </ul>
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#contact" class="nav-cta">Start Project</a>
+            </nav>
 
+            <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-        </nav>
+        </div>
 
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <a href="#home" class="mobile-nav-link">Home</a>
             <a href="#services" class="mobile-nav-link">Services</a>
+            <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
             <a href="#process" class="mobile-nav-link">Process</a>
-            <a href="#portfolio" class="mobile-nav-link">Our Work</a>
-            <a href="#contact" class="mobile-nav-cta">Get Started</a>
+            <a href="#contact" class="mobile-nav-cta">Start Project</a>
         </div>
     </header>
 
-    <!-- Hero Section with Video Background -->
+    <!-- Cinematic Hero with Video -->
     <section class="hero" id="home">
         <!-- Video Background -->
-        <video class="hero-video" autoplay muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%23001F3F'/%3E%3C/svg%3E">
+        <video class="hero-video" autoplay muted loop playsinline 
+               poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%230A192F'/%3E%3C/svg%3E">
             <source src="wave.mp4" type="video/mp4">
-            <!-- Fallback for browsers that don't support video -->
             Your browser does not support the video tag.
         </video>
         
         <!-- Gradient Overlay -->
         <div class="hero-overlay"></div>
         
-        <div class="hero-content">
-            <div class="hero-badge">Corporate Website Development</div>
-            <h1 class="hero-title">Elevate Your Digital Presence with Professional Corporate Websites</h1>
-            <p class="hero-subtitle">
-                We craft sophisticated, high-performing corporate websites that establish credibility, 
-                engage audiences, and drive measurable business growth through strategic design and development.
-            </p>
-            <div class="hero-actions">
-                <a href="#portfolio" class="btn btn-primary">
-                    View Our Work
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#contact" class="btn btn-secondary">Start Your Project</a>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-crown"></i>
+                    Premium Corporate Website Design
+                </div>
+                <h1 class="hero-title">Transforming Businesses with Extraordinary Digital Experiences</h1>
+                <p class="hero-subtitle">
+                    We craft sophisticated, high-performance corporate websites that establish market leadership, 
+                    engage audiences, and drive measurable growth through exceptional design and strategic development.
+                </p>
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn-primary">
+                        View Our Work
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Consultation
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Compact Services Section -->
+    <!-- Elegant Services Section -->
     <section class="services section" id="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Our Services</span>
-                <h2 class="section-title">Comprehensive Corporate Website Solutions</h2>
+                <span class="section-label">Our Expertise</span>
+                <h2 class="section-title">Crafting Digital Excellence</h2>
                 <p class="section-subtitle">
-                    We deliver end-to-end corporate website development services designed to establish 
-                    your digital presence and accelerate business growth through strategic design and technology.
+                    We combine artistic vision with technical precision to deliver websites 
+                    that not only look extraordinary but perform exceptionally.
                 </p>
             </div>
             
             <div class="services-grid">
                 <div class="service-card fade-in">
                     <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-paint-brush"></i>
                     </div>
-                    <h3 class="service-title">Website Design & Development</h3>
+                    <h3 class="service-title">Award-Winning Design</h3>
                     <p class="service-description">
-                        Complete corporate website solutions that reflect your brand's professionalism with cutting-edge design and technology.
+                        Bespoke visual experiences that capture your brand's essence and 
+                        create lasting impressions through sophisticated design principles.
                     </p>
                     <ul class="service-features">
-                        <li class="service-feature">Custom responsive design</li>
-                        <li class="service-feature">Brand identity integration</li>
-                        <li class="service-feature">Content management system</li>
-                        <li class="service-feature">SEO optimization</li>
+                        <li class="service-feature">Custom visual identity</li>
+                        <li class="service-feature">UX/UI excellence</li>
+                        <li class="service-feature">Brand storytelling</li>
+                        <li class="service-feature">Interactive elements</li>
                     </ul>
                 </div>
 
                 <div class="service-card fade-in">
                     <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
+                        <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="service-title">Maintenance & Support</h3>
+                    <h3 class="service-title">Technical Brilliance</h3>
                     <p class="service-description">
-                        Ongoing support and maintenance to ensure your corporate website remains secure and performing optimally.
+                        Cutting-edge development that ensures flawless performance, 
+                        robust security, and seamless functionality across all platforms.
                     </p>
                     <ul class="service-features">
-                        <li class="service-feature">Regular security updates</li>
-                        <li class="service-feature">Content updates</li>
-                        <li class="service-feature">Performance monitoring</li>
-                        <li class="service-feature">Technical support</li>
+                        <li class="service-feature">Modern frameworks</li>
+                        <li class="service-feature">Performance optimization</li>
+                        <li class="service-feature">Scalable architecture</li>
+                        <li class="service-feature">Security protocols</li>
                     </ul>
                 </div>
 
@@ -1699,236 +1859,167 @@
                     <div class="service-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="service-title">Strategy & Consulting</h3>
+                    <h3 class="service-title">Strategic Impact</h3>
                     <p class="service-description">
-                        Strategic guidance to maximize your digital presence through data-driven web solutions and optimization.
+                        Data-driven strategies that transform your website into a powerful 
+                        business growth engine, delivering measurable ROI and market leadership.
                     </p>
                     <ul class="service-features">
-                        <li class="service-feature">Digital transformation</li>
-                        <li class="service-feature">User experience strategy</li>
-                        <li class="service-feature">Content strategy</li>
-                        <li class="service-feature">Analytics implementation</li>
+                        <li class="service-feature">Conversion optimization</li>
+                        <li class="service-feature">SEO leadership</li>
+                        <li class="service-feature">Analytics integration</li>
+                        <li class="service-feature">Growth strategy</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Compact Process Section -->
-    <section class="process section" id="process">
+    <!-- Design Showcase -->
+    <section class="showcase section" id="showcase">
+        <div class="showcase-bg"></div>
         <div class="container">
-            <div class="process-header">
-                <span class="section-label">Our Process</span>
-                <h2 class="section-title">Strategic Approach to Corporate Website Development</h2>
-                <p class="section-subtitle">
-                    Our proven methodology ensures every corporate website we develop delivers exceptional 
-                    results through careful planning, execution, and optimization.
-                </p>
-            </div>
-            
-            <div class="process-grid">
-                <div class="process-step fade-in">
-                    <div class="step-number">
-                        <span class="step-icon"><i class="fas fa-search"></i></span>
-                        1
-                    </div>
-                    <h3 class="step-title">Discovery & Strategy</h3>
-                    <p class="step-description">Understanding your business objectives and developing a comprehensive digital strategy.</p>
-                    <ul class="step-features">
-                        <li class="step-feature">Business analysis</li>
-                        <li class="step-feature">Target research</li>
-                        <li class="step-feature">Strategy development</li>
+            <div class="showcase-content">
+                <div class="showcase-text">
+                    <h2>The Art of Digital Presence</h2>
+                    <p>
+                        Your website is more than a digital brochure—it's the embodiment of your brand's 
+                        identity, values, and aspirations. We craft experiences that resonate deeply with 
+                        your audience and position you as an industry leader.
+                    </p>
+                    <p>
+                        Every pixel, every interaction, and every line of code is meticulously crafted 
+                        to create a cohesive, impactful digital presence that drives business success.
+                    </p>
+                    
+                    <ul class="benefits-list">
+                        <li class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Enhanced brand perception and authority</span>
+                        </li>
+                        <li class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Increased engagement and conversion rates</span>
+                        </li>
+                        <li class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Competitive advantage through innovation</span>
+                        </li>
+                        <li class="benefit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Long-term scalability and growth potential</span>
+                        </li>
                     </ul>
                 </div>
                 
-                <div class="process-step fade-in">
-                    <div class="step-number">
-                        <span class="step-icon"><i class="fas fa-pencil-ruler"></i></span>
-                        2
+                <div class="showcase-visual">
+                    <div class="website-mockup">
+                        <div class="mockup-header">
+                            <div class="mockup-dot"></div>
+                            <div class="mockup-dot"></div>
+                            <div class="mockup-dot"></div>
+                        </div>
+                        <div class="mockup-content">
+                            <img src="mm1.png" alt="Website Preview" class="mockup-logo">
+                        </div>
                     </div>
-                    <h3 class="step-title">Design & Prototyping</h3>
-                    <p class="step-description">Creating wireframes and prototypes aligned with your brand identity.</p>
-                    <ul class="step-features">
-                        <li class="step-feature">Wireframe creation</li>
-                        <li class="step-feature">UI/UX design</li>
-                        <li class="step-feature">Brand integration</li>
-                    </ul>
-                </div>
-                
-                <div class="process-step fade-in">
-                    <div class="step-number">
-                        <span class="step-icon"><i class="fas fa-code"></i></span>
-                        3
-                    </div>
-                    <h3 class="step-title">Development</h3>
-                    <p class="step-description">Building your website with modern technologies for performance and security.</p>
-                    <ul class="step-features">
-                        <li class="step-feature">Frontend development</li>
-                        <li class="step-feature">Backend development</li>
-                        <li class="step-feature">CMS integration</li>
-                    </ul>
-                </div>
-                
-                <div class="process-step fade-in">
-                    <div class="step-number">
-                        <span class="step-icon"><i class="fas fa-vial"></i></span>
-                        4
-                    </div>
-                    <h3 class="step-title">Testing & Optimization</h3>
-                    <p class="step-description">Rigorous testing across devices and browsers for flawless experience.</p>
-                    <ul class="step-features">
-                        <li class="step-feature">Cross-browser testing</li>
-                        <li class="step-feature">Performance testing</li>
-                        <li class="step-feature">User testing</li>
-                    </ul>
-                </div>
-                
-                <div class="process-step fade-in">
-                    <div class="step-number">
-                        <span class="step-icon"><i class="fas fa-rocket"></i></span>
-                        5
-                    </div>
-                    <h3 class="step-title">Launch & Support</h3>
-                    <p class="step-description">Deployment and ongoing support to ensure optimal performance.</p>
-                    <ul class="step-features">
-                        <li class="step-feature">Deployment</li>
-                        <li class="step-feature">Maintenance</li>
-                        <li class="step-feature">Support</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Portfolio Section -->
+    <!-- Portfolio Gallery -->
     <section class="portfolio section" id="portfolio">
+        <div class="portfolio-bg"></div>
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Our Work</span>
-                <h2 class="section-title">Corporate Website Portfolio</h2>
+                <span class="section-label">Our Masterpieces</span>
+                <h2 class="section-title">Excellence in Action</h2>
                 <p class="section-subtitle">
-                    Explore our recent corporate website projects that demonstrate our expertise 
-                    in creating professional, high-converting digital experiences for diverse industries.
+                    Witness the transformative power of exceptional website design through 
+                    our portfolio of successful corporate implementations.
                 </p>
             </div>
 
             <div class="portfolio-grid">
-                <!-- Teliti Infotech Case Study -->
+                <!-- Teliti Infotech -->
                 <div class="portfolio-card fade-in">
                     <div class="portfolio-image">
-                        <div class="client-logo-wrapper">
-                            <img src="telt.png" alt="Teliti Infotech" class="portfolio-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'client-name\'>Teliti Infotech</div>';">
-                        </div>
-                        <div class="project-badge">Featured Project</div>
+                        <img src="telt.png" alt="Teliti Infotech" class="portfolio-logo">
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-header">
-                            <div class="client-info">
-                                <span class="client-industry">IT Solutions Provider</span>
+                            <div>
                                 <h3 class="portfolio-title">Teliti Infotech</h3>
+                                <div class="portfolio-industry">Enterprise IT Solutions</div>
                             </div>
-                            <div class="project-type">Complete Redesign</div>
-                        </div>
-                        
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">Corporate Website</span>
-                            <span class="portfolio-tag">Enterprise Solution</span>
-                            <span class="portfolio-tag">Digital Transformation</span>
+                            <div class="portfolio-tag">Complete Redesign</div>
                         </div>
                         
                         <p class="portfolio-description">
-                            Comprehensive website redesign for Malaysia's leading IT solutions provider, 
-                            delivering modern design, enhanced user experience, and improved performance 
-                            across all devices with better lead generation capabilities.
+                            A comprehensive digital transformation that established market 
+                            leadership through sophisticated design, enhanced user experience, 
+                            and professional corporate identity.
                         </p>
                         
-                        <div class="project-highlights">
-                            <h4 class="highlights-title">Key Achievements:</h4>
-                            <div class="highlight-items">
-                                <div class="highlight-item">
-                                    <i class="fas fa-paint-brush"></i>
-                                    <span>Modern Design System</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-rocket"></i>
-                                    <span>Performance Optimized</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-mobile-alt"></i>
-                                    <span>Mobile-First Approach</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-search"></i>
-                                    <span>SEO Enhanced</span>
-                                </div>
+                        <div class="portfolio-features">
+                            <div class="feature-item">
+                                <i class="fas fa-paint-brush"></i>
+                                <span>Modern Corporate Design</span>
                             </div>
-                        </div>
-                        
-                        <div class="portfolio-actions">
-                            <a href="https://teliti.com" target="_blank" class="portfolio-link primary">
-                                <span>Visit Live Website</span>
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
+                            <div class="feature-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Responsive Layout</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-rocket"></i>
+                                <span>Performance Optimized</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-search"></i>
+                                <span>SEO Friendly</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Prove ForTech Case Study -->
+                <!-- Prove ForTech -->
                 <div class="portfolio-card fade-in">
                     <div class="portfolio-image">
-                        <div class="client-logo-wrapper">
-                            <img src="prv.png" alt="Prove ForTech" class="portfolio-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'client-name\'>Prove ForTech</div>';">
-                        </div>
-                        <div class="project-badge">New Launch</div>
+                        <img src="prv.png" alt="Prove ForTech" class="portfolio-logo">
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-header">
-                            <div class="client-info">
-                                <span class="client-industry">Technology Solutions</span>
+                            <div>
                                 <h3 class="portfolio-title">Prove ForTech</h3>
+                                <div class="portfolio-industry">Technology Innovation</div>
                             </div>
-                            <div class="project-type">Brand New Platform</div>
-                        </div>
-                        
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">Corporate Website</span>
-                            <span class="portfolio-tag">Technology</span>
-                            <span class="portfolio-tag">From Scratch</span>
+                            <div class="portfolio-tag">From Concept</div>
                         </div>
                         
                         <p class="portfolio-description">
-                            Complete corporate website built from the ground up for a premier technology 
-                            solutions provider, featuring cutting-edge design, comprehensive service showcases, 
-                            and advanced functionality to establish their digital presence.
+                            A visionary digital platform that defined industry standards 
+                            through cutting-edge design, innovative functionality, and 
+                            strategic positioning as a technology leader.
                         </p>
                         
-                        <div class="project-highlights">
-                            <h4 class="highlights-title">Key Features:</h4>
-                            <div class="highlight-items">
-                                <div class="highlight-item">
-                                    <i class="fas fa-code"></i>
-                                    <span>Built From Scratch</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-cogs"></i>
-                                    <span>Advanced Features</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-palette"></i>
-                                    <span>Brand Identity</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-shield-alt"></i>
-                                    <span>Future-Proof Architecture</span>
-                                </div>
+                        <div class="portfolio-features">
+                            <div class="feature-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Creative Concept</span>
                             </div>
-                        </div>
-                        
-                        <div class="portfolio-actions">
-                            <a href="https://www.prove.com.my" target="_blank" class="portfolio-link primary">
-                                <span>Visit Live Website</span>
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
+                            <div class="feature-item">
+                                <i class="fas fa-code"></i>
+                                <span>Custom Development</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Business Strategy</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure & Scalable</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1936,106 +2027,147 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Process Excellence - FIXED SECTION -->
+    <section class="process section" id="process">
+        <div class="process-bg"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Methodology</span>
+                <h2 class="section-title">The Path to Perfection</h2>
+                <p class="section-subtitle">
+                    A meticulous, collaborative process that ensures every project achieves 
+                    its highest potential through strategic planning and flawless execution.
+                </p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step fade-in">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Discovery</h3>
+                    <p class="step-description">Deep understanding of your vision, goals, and market position.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Strategy</h3>
+                    <p class="step-description">Comprehensive planning and architecture for maximum impact.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Creation</h3>
+                    <p class="step-description">Artistic design and technical development with precision.</p>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">04</div>
+                    <h3 class="step-title">Perfection</h3>
+                    <p class="step-description">Meticulous testing and refinement for flawless delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elegant CTA -->
     <section class="cta section" id="contact">
+        <div class="cta-bg"></div>
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Ready to Transform Your Digital Presence?</h2>
+                <h2 class="cta-title">Ready to Redefine Excellence?</h2>
                 <p class="cta-subtitle">
-                    Let's discuss how a professional corporate website can elevate your brand 
-                    and drive measurable business growth. Contact us for a complimentary consultation.
+                    Transform your digital presence with a website that sets new standards 
+                    of excellence, drives unprecedented growth, and establishes lasting 
+                    market leadership. Let's create something extraordinary together.
                 </p>
-                <div class="cta-actions">
-                    <a href="mailto:hello@maxmin.com" class="btn btn-light">
-                        Start Your Project
-                        <i class="fas fa-comment"></i>
-                    </a>
-                    <a href="#portfolio" class="btn btn-outline-light">View Our Work</a>
-                </div>
+                <a href="mailto:hello@maxmin.com" class="btn">
+                    Begin Your Journey to Excellence
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Sophisticated Footer -->
     <footer class="footer">
+        <div class="footer-bg"></div>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <!-- FIXED: Using mm0.png for footer with proper styling -->
-                        <img src="mm0.png" alt="maxmin" class="footer-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-text\'>maxmin</span>';">
+                        <img src="mm0.png" alt="maxmin" class="footer-logo">
                     </a>
                     <p class="footer-description">
-                        maxmin specializes in creating professional corporate websites that establish 
-                        credibility, engage audiences, and drive measurable business growth through 
-                        strategic design and development.
+                        Crafting exceptional corporate websites that define industry 
+                        standards through artistic vision, technical excellence, and 
+                        strategic innovation.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Behance">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="footer-links-group">
-                    <h4 class="footer-heading">Services</h4>
+                <div>
+                    <h4 class="footer-heading">Excellence</h4>
                     <ul class="footer-links">
-                        <li class="footer-link"><a href="#services">Corporate Websites</a></li>
-                        <li class="footer-link"><a href="#services">Website Maintenance</a></li>
-                        <li class="footer-link"><a href="#services">Digital Consulting</a></li>
+                        <li class="footer-link"><a href="#home">Our Philosophy</a></li>
+                        <li class="footer-link"><a href="#portfolio">Masterpieces</a></li>
+                        <li class="footer-link"><a href="#process">Methodology</a></li>
+                        <li class="footer-link"><a href="#contact">Collaborate</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-links-group">
-                    <h4 class="footer-heading">Company</h4>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#home">About Us</a></li>
-                        <li class="footer-link"><a href="#process">Our Process</a></li>
-                        <li class="footer-link"><a href="#portfolio">Our Work</a></li>
-                        <li class="footer-link"><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links-group">
+                <div>
                     <h4 class="footer-heading">Connect</h4>
                     <ul class="footer-links">
-                        <li class="footer-link"><a href="mailto:hello@maxmin.com">Email</a></li>
+                        <li class="footer-link"><a href="mailto:hello@maxmin.com">hello@maxmin.com</a></li>
+                        <li class="footer-link"><a href="tel:+1234567890">+1 (234) 567-890</a></li>
                         <li class="footer-link"><a href="#">LinkedIn</a></li>
-                        <li class="footer-link"><a href="#">GitHub</a></li>
+                        <li class="footer-link"><a href="#">Behance</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 maxmin. All rights reserved. Corporate Website Development.</p>
+                <p>&copy; 2024 maxmin. Redefining digital excellence through exceptional website design.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Enhanced Corporate Website JavaScript
-        class CorporateWebsite {
+        // Enhanced JavaScript with Mobile Support
+        class PremiumWebsite {
             constructor() {
                 this.init();
             }
 
             init() {
-                this.setupLoadingScreen();
+                this.setupLoading();
                 this.setupMobileMenu();
                 this.setupHeader();
+                this.setupVideo();
                 this.setupSmoothScrolling();
-                this.setupIntersectionObserver();
+                this.setupObservers();
                 this.setupTouchInteractions();
-                this.setupVideoBackground();
+                this.fixTextOverflow();
             }
 
-            setupLoadingScreen() {
+            setupLoading() {
                 const loading = document.getElementById('loading');
                 window.addEventListener('load', () => {
                     setTimeout(() => {
                         loading.classList.add('hidden');
-                    }, 500);
+                    }, 800);
                 });
             }
 
@@ -2044,7 +2176,8 @@
                 const mobileMenu = document.getElementById('mobileMenu');
                 const body = document.body;
 
-                mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     mobileMenuBtn.classList.toggle('active');
                     mobileMenu.classList.toggle('active');
                     body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
@@ -2060,8 +2193,19 @@
                 });
 
                 // Close menu when clicking outside
-                mobileMenu.addEventListener('click', (e) => {
-                    if (e.target === mobileMenu) {
+                document.addEventListener('click', (e) => {
+                    if (mobileMenu.classList.contains('active') && 
+                        !mobileMenu.contains(e.target) && 
+                        !mobileMenuBtn.contains(e.target)) {
+                        mobileMenuBtn.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        body.style.overflow = '';
+                    }
+                });
+
+                // Close menu on escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
                         mobileMenuBtn.classList.remove('active');
                         mobileMenu.classList.remove('active');
                         body.style.overflow = '';
@@ -2071,16 +2215,42 @@
 
             setupHeader() {
                 const header = document.getElementById('header');
-                let lastScrollY = window.scrollY;
-
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 50) {
                         header.classList.add('scrolled');
                     } else {
                         header.classList.remove('scrolled');
                     }
-                    lastScrollY = window.scrollY;
                 });
+            }
+
+            setupVideo() {
+                const video = document.querySelector('.hero-video');
+                if (video) {
+                    // Set video attributes for mobile
+                    video.setAttribute('playsinline', '');
+                    video.setAttribute('muted', '');
+                    video.setAttribute('autoplay', '');
+                    video.setAttribute('loop', '');
+                    
+                    // Handle video playback
+                    const playVideo = () => {
+                        const playPromise = video.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(() => {
+                                // Autoplay prevented, mute and try again
+                                video.muted = true;
+                                video.play();
+                            });
+                        }
+                    };
+                    
+                    // Try to play after user interaction
+                    document.addEventListener('click', playVideo, { once: true });
+                    
+                    // Also try on load
+                    video.addEventListener('loadeddata', playVideo);
+                }
             }
 
             setupSmoothScrolling() {
@@ -2101,7 +2271,7 @@
                 });
             }
 
-            setupIntersectionObserver() {
+            setupObservers() {
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
@@ -2113,18 +2283,21 @@
                     rootMargin: '0px 0px -30px 0px'
                 });
 
-                document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+                document.querySelectorAll('.fade-in').forEach(el => {
                     observer.observe(el);
                 });
             }
 
             setupTouchInteractions() {
-                // Add touch-specific interactions for mobile
+                // Add touch-specific interactions
                 if ('ontouchstart' in window) {
-                    // Add touch feedback for buttons
-                    document.querySelectorAll('.btn, .nav-link, .mobile-nav-link').forEach(element => {
+                    // Prevent :hover styles on touch
+                    document.addEventListener('touchstart', () => {}, true);
+                    
+                    // Add tap feedback
+                    document.querySelectorAll('.btn, .nav-cta, .mobile-nav-link').forEach(element => {
                         element.addEventListener('touchstart', function() {
-                            this.style.transform = 'scale(0.98)';
+                            this.style.transform = 'scale(0.95)';
                         });
                         
                         element.addEventListener('touchend', function() {
@@ -2134,36 +2307,24 @@
                 }
             }
 
-            setupVideoBackground() {
-                const video = document.querySelector('.hero-video');
-                if (video) {
-                    // Ensure video plays correctly on mobile
-                    video.setAttribute('playsinline', '');
-                    video.setAttribute('muted', '');
-                    video.setAttribute('autoplay', '');
-                    video.setAttribute('loop', '');
-                    
-                    // Handle video loading
-                    video.addEventListener('loadeddata', function() {
-                        console.log('Video loaded successfully');
-                    });
-                    
-                    video.addEventListener('error', function() {
-                        console.log('Error loading video, using fallback');
-                        // You could set a fallback background image here
-                    });
-                }
+            fixTextOverflow() {
+                // Ensure all text containers have proper overflow handling
+                const textContainers = document.querySelectorAll('.hero-title, .hero-subtitle, .section-title, .section-subtitle, .step-description');
+                textContainers.forEach(container => {
+                    container.style.wordWrap = 'break-word';
+                    container.style.overflowWrap = 'break-word';
+                });
             }
         }
 
-        // Initialize website
+        // Initialize
         document.addEventListener('DOMContentLoaded', () => {
-            new CorporateWebsite();
+            new PremiumWebsite();
         });
 
         // Handle resize events
         window.addEventListener('resize', () => {
-            if (window.innerWidth > 1024) {
+            if (window.innerWidth > 768) {
                 const mobileMenu = document.getElementById('mobileMenu');
                 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
                 if (mobileMenu.classList.contains('active')) {
@@ -2173,6 +2334,16 @@
                 }
             }
         });
+
+        // Fix for mobile viewport height
+        function setViewportHeight() {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        window.addEventListener('resize', setViewportHeight);
+        window.addEventListener('orientationchange', setViewportHeight);
+        setViewportHeight();
     </script>
 </body>
 </html>
