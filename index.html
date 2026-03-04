@@ -3,428 +3,531 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>maxmin | Premium Corporate Website Design</title>
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="wave.mp4" as="video" type="video/mp4">
-    <link rel="preload" href="mm1.png" as="image">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Main CSS -->
+    <meta name="description" content="MaxMin — Web design studio based in Terengganu, Malaysia. We build fast, professional websites that grow your business. Hand-coded. No WordPress.">
+    <meta name="keywords" content="web design terengganu, website malaysia, maxmin, pembina laman web terengganu, laman web murah, web developer kuala terengganu">
+    <meta property="og:title" content="MaxMin — Your Vision, Our Code">
+    <meta property="og:description" content="Professional websites for Terengganu businesses. Fast, beautiful, hand-coded.">
+    <meta property="og:type" content="website">
+    <title>MaxMin — Your Vision, Our Code</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading" id="loading">
-        <div class="loading-logo"></div>
+
+    <!-- LOADER -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">MAX<span>/</span>MIN</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
     </div>
 
-    <!-- Enhanced Header with Mobile Menu -->
-    <header class="header" id="header">
-        <div class="nav-container">
-            <a href="#home" class="logo">
-                <img src="mm1.png" alt="maxmin" class="logo-img">
-            </a>
-            
-            <!-- Desktop Navigation -->
-            <nav class="desktop-nav">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="#process" class="nav-link">Process</a>
-                <a href="#contact" class="nav-cta">Start Project</a>
-            </nav>
+    <!-- CURSOR -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
 
-            <!-- Mobile Menu Button -->
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- HEADER -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="mm1.png" alt="MaxMin Logo">
+            </a>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#contact" class="nav-cta">Hubungi Kami →</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
             </button>
         </div>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="#home" class="mobile-nav-link">Home</a>
-            <a href="#services" class="mobile-nav-link">Services</a>
-            <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
-            <a href="#process" class="mobile-nav-link">Process</a>
-            <a href="#contact" class="mobile-nav-cta">Start Project</a>
-        </div>
+        <div class="overlay" id="overlay"></div>
     </header>
 
-    <!-- Cinematic Hero with Video -->
+    <!-- HERO -->
     <section class="hero" id="home">
-        <!-- Video Background -->
-        <video class="hero-video" autoplay muted loop playsinline 
-               poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080' viewBox='0 0 1920 1080'%3E%3Crect width='1920' height='1080' fill='%230A192F'/%3E%3C/svg%3E">
+        <video autoplay muted loop playsinline class="hero-video">
             <source src="wave.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
-        
-        <!-- Gradient Overlay -->
         <div class="hero-overlay"></div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-crown"></i>
-                    Premium Corporate Website Design
-                </div>
-                <h1 class="hero-title">Transforming Businesses with Extraordinary Digital Experiences</h1>
-                <p class="hero-subtitle">
-                    We craft sophisticated, high-performance corporate websites that establish market leadership, 
-                    engage audiences, and drive measurable growth through exceptional design and strategic development.
-                </p>
-                <div class="hero-actions">
-                    <a href="#portfolio" class="btn btn-primary">
-                        View Our Work
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-calendar"></i>
-                        Schedule Consultation
-                    </a>
-                </div>
+        <div class="hero-content">
+            <div class="hero-tag">
+                <span class="tag-dot"></span>
+                Terengganu, Malaysia 🇲🇾 · Berdaftar SSM
             </div>
-        </div>
-    </section>
-
-    <!-- Elegant Services Section -->
-    <section class="services section" id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Our Expertise</span>
-                <h2 class="section-title">Crafting Digital Excellence</h2>
-                <p class="section-subtitle">
-                    We combine artistic vision with technical precision to deliver websites 
-                    that not only look extraordinary but perform exceptionally.
-                </p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3 class="service-title">Award-Winning Design</h3>
-                    <p class="service-description">
-                        Bespoke visual experiences that capture your brand's essence and 
-                        create lasting impressions through sophisticated design principles.
-                    </p>
-                    <ul class="service-features">
-                        <li class="service-feature">Custom visual identity</li>
-                        <li class="service-feature">UX/UI excellence</li>
-                        <li class="service-feature">Brand storytelling</li>
-                        <li class="service-feature">Interactive elements</li>
-                    </ul>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="service-title">Technical Brilliance</h3>
-                    <p class="service-description">
-                        Cutting-edge development that ensures flawless performance, 
-                        robust security, and seamless functionality across all platforms.
-                    </p>
-                    <ul class="service-features">
-                        <li class="service-feature">Modern frameworks</li>
-                        <li class="service-feature">Performance optimization</li>
-                        <li class="service-feature">Scalable architecture</li>
-                        <li class="service-feature">Security protocols</li>
-                    </ul>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="service-title">Strategic Impact</h3>
-                    <p class="service-description">
-                        Data-driven strategies that transform your website into a powerful 
-                        business growth engine, delivering measurable ROI and market leadership.
-                    </p>
-                    <ul class="service-features">
-                        <li class="service-feature">Conversion optimization</li>
-                        <li class="service-feature">SEO leadership</li>
-                        <li class="service-feature">Analytics integration</li>
-                        <li class="service-feature">Growth strategy</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Design Showcase -->
-    <section class="showcase section" id="showcase">
-        <div class="showcase-bg"></div>
-        <div class="container">
-            <div class="showcase-content">
-                <div class="showcase-text">
-                    <h2>The Art of Digital Presence</h2>
-                    <p>
-                        Your website is more than a digital brochure—it's the embodiment of your brand's 
-                        identity, values, and aspirations. We craft experiences that resonate deeply with 
-                        your audience and position you as an industry leader.
-                    </p>
-                    <p>
-                        Every pixel, every interaction, and every line of code is meticulously crafted 
-                        to create a cohesive, impactful digital presence that drives business success.
-                    </p>
-                    
-                    <ul class="benefits-list">
-                        <li class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Enhanced brand perception and authority</span>
-                        </li>
-                        <li class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Increased engagement and conversion rates</span>
-                        </li>
-                        <li class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Competitive advantage through innovation</span>
-                        </li>
-                        <li class="benefit-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Long-term scalability and growth potential</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="showcase-visual">
-                    <div class="website-mockup">
-                        <div class="mockup-header">
-                            <div class="mockup-dot"></div>
-                            <div class="mockup-dot"></div>
-                            <div class="mockup-dot"></div>
-                        </div>
-                        <div class="mockup-content">
-                            <img src="mm1.png" alt="Website Preview" class="mockup-logo">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Gallery -->
-    <section class="portfolio section" id="portfolio">
-        <div class="portfolio-bg"></div>
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Our Masterpieces</span>
-                <h2 class="section-title">Excellence in Action</h2>
-                <p class="section-subtitle">
-                    Witness the transformative power of exceptional website design through 
-                    our portfolio of successful corporate implementations.
-                </p>
-            </div>
-
-            <div class="portfolio-grid">
-                <!-- Teliti Infotech -->
-                <div class="portfolio-card fade-in">
-                    <div class="portfolio-image">
-                        <img src="telt.png" alt="Teliti Infotech" class="portfolio-logo">
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-header">
-                            <div>
-                                <h3 class="portfolio-title">Teliti Infotech</h3>
-                                <div class="portfolio-industry">Enterprise IT Solutions</div>
-                            </div>
-                            <div class="portfolio-tag">Complete Redesign</div>
-                        </div>
-                        
-                        <p class="portfolio-description">
-                            A comprehensive digital transformation that established market 
-                            leadership through sophisticated design, enhanced user experience, 
-                            and professional corporate identity.
-                        </p>
-                        
-                        <div class="portfolio-features">
-                            <div class="feature-item">
-                                <i class="fas fa-paint-brush"></i>
-                                <span>Modern Corporate Design</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-mobile-alt"></i>
-                                <span>Responsive Layout</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-rocket"></i>
-                                <span>Performance Optimized</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-search"></i>
-                                <span>SEO Friendly</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Prove ForTech -->
-                <div class="portfolio-card fade-in">
-                    <div class="portfolio-image">
-                        <img src="prv.png" alt="Prove ForTech" class="portfolio-logo">
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-header">
-                            <div>
-                                <h3 class="portfolio-title">Prove ForTech</h3>
-                                <div class="portfolio-industry">Technology Innovation</div>
-                            </div>
-                            <div class="portfolio-tag">From Concept</div>
-                        </div>
-                        
-                        <p class="portfolio-description">
-                            A visionary digital platform that defined industry standards 
-                            through cutting-edge design, innovative functionality, and 
-                            strategic positioning as a technology leader.
-                        </p>
-                        
-                        <div class="portfolio-features">
-                            <div class="feature-item">
-                                <i class="fas fa-lightbulb"></i>
-                                <span>Creative Concept</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-code"></i>
-                                <span>Custom Development</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-chart-line"></i>
-                                <span>Business Strategy</span>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-shield-alt"></i>
-                                <span>Secure & Scalable</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Excellence - FIXED SECTION -->
-    <section class="process section" id="process">
-        <div class="process-bg"></div>
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Our Methodology</span>
-                <h2 class="section-title">The Path to Perfection</h2>
-                <p class="section-subtitle">
-                    A meticulous, collaborative process that ensures every project achieves 
-                    its highest potential through strategic planning and flawless execution.
-                </p>
-            </div>
-            
-            <div class="process-steps">
-                <div class="process-step fade-in">
-                    <div class="step-number">01</div>
-                    <h3 class="step-title">Discovery</h3>
-                    <p class="step-description">Deep understanding of your vision, goals, and market position.</p>
-                </div>
-                
-                <div class="process-step fade-in">
-                    <div class="step-number">02</div>
-                    <h3 class="step-title">Strategy</h3>
-                    <p class="step-description">Comprehensive planning and architecture for maximum impact.</p>
-                </div>
-                
-                <div class="process-step fade-in">
-                    <div class="step-number">03</div>
-                    <h3 class="step-title">Creation</h3>
-                    <p class="step-description">Artistic design and technical development with precision.</p>
-                </div>
-                
-                <div class="process-step fade-in">
-                    <div class="step-number">04</div>
-                    <h3 class="step-title">Perfection</h3>
-                    <p class="step-description">Meticulous testing and refinement for flawless delivery.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Elegant CTA -->
-    <section class="cta section" id="contact">
-        <div class="cta-bg"></div>
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to Redefine Excellence?</h2>
-                <p class="cta-subtitle">
-                    Transform your digital presence with a website that sets new standards 
-                    of excellence, drives unprecedented growth, and establishes lasting 
-                    market leadership. Let's create something extraordinary together.
-                </p>
-                <a href="https://wa.me/60109304866?text=Hi%20maxmin%2C%20I'm%20interested%20in%20your%20premium%20website%20design%20services.%20Can%20we%20discuss%20a%20project%3F" class="btn" target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i>
-                    WhatsApp for Excellence
+            <h1 class="hero-title">
+                <span class="title-line">YOUR</span>
+                <span class="title-line accent">VISION,</span>
+                <span class="title-line">OUR CODE.</span>
+            </h1>
+            <p class="hero-sub">Kami bina laman web profesional, laju, dan cantik<br>untuk perniagaan anda — hand-coded, bukan WordPress.</p>
+            <div class="hero-btns">
+                <a href="#pricing" class="btn-primary">
+                    <span>Lihat Pakej</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
+                <a href="#portfolio" class="btn-secondary">Portfolio →</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-num">2+</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-num">100%</div>
+                    <div class="stat-label">Hand-Coded</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-num">SSM</div>
+                    <div class="stat-label">Registered</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            <span>scroll</span>
+        </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span>Business Website</span><span class="ticker-dot">✦</span>
+            <span>Laman Web Profesional</span><span class="ticker-dot">✦</span>
+            <span>Logo & Branding</span><span class="ticker-dot">✦</span>
+            <span>Website Maintenance</span><span class="ticker-dot">✦</span>
+            <span>Mobile-Friendly</span><span class="ticker-dot">✦</span>
+            <span>Hand-Coded · No WordPress</span><span class="ticker-dot">✦</span>
+            <span>Terengganu, Malaysia</span><span class="ticker-dot">✦</span>
+            <span>Business Website</span><span class="ticker-dot">✦</span>
+            <span>Laman Web Profesional</span><span class="ticker-dot">✦</span>
+            <span>Logo & Branding</span><span class="ticker-dot">✦</span>
+            <span>Website Maintenance</span><span class="ticker-dot">✦</span>
+            <span>Mobile-Friendly</span><span class="ticker-dot">✦</span>
+            <span>Hand-Coded · No WordPress</span><span class="ticker-dot">✦</span>
+            <span>Terengganu, Malaysia</span><span class="ticker-dot">✦</span>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">— Perkhidmatan / Services</div>
+                <h2 class="section-title">Apa Yang<br>Kami Buat</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-num="01">
+                    <div class="service-icon">⚡</div>
+                    <h3>Business Website</h3>
+                    <p>Laman web profesional yang pantas, cantik dan mobile-friendly untuk perniagaan anda. Hand-coded — bukan WordPress.</p>
+                    <div class="service-tags">
+                        <span>HTML/CSS/JS</span><span>Mobile-First</span><span>SEO Ready</span>
+                    </div>
+                </div>
+                <div class="service-card" data-num="02">
+                    <div class="service-icon">🔧</div>
+                    <h3>Website Maintenance</h3>
+                    <p>Selenggara dan kemaskini laman web anda supaya sentiasa berfungsi dengan baik dan selamat.</p>
+                    <div class="service-tags">
+                        <span>Updates</span><span>Bug Fix</span><span>Monitoring</span>
+                    </div>
+                </div>
+                <div class="service-card" data-num="03">
+                    <div class="service-icon">🎨</div>
+                    <h3>Logo & Branding</h3>
+                    <p>Rekabentuk logo dan identiti jenama yang unik dan profesional. Buat perniagaan anda kelihatan besar.</p>
+                    <div class="service-tags">
+                        <span>Logo</span><span>Brand Kit</span><span>Identity</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sophisticated Footer -->
-    <footer class="footer">
-        <div class="footer-bg"></div>
+    <!-- WHY US -->
+    <section class="why-us" id="why">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <img src="mm0.png" alt="maxmin" class="footer-logo">
+            <div class="why-us-grid">
+                <div class="why-us-text">
+                    <div class="section-label">— Kenapa MaxMin?</div>
+                    <h2 class="section-title">Local.<br>Fast.<br>Trusted.</h2>
+                    <p>Kami dari Terengganu. Kami faham bisnes tempatan. Kami boleh jumpa anda terus dan bantu anda dari mula hingga akhir — bukan syarikat KL yang jauh.</p>
+                    <a href="#contact" class="btn-primary why-cta">
+                        <span>Bincang Sekarang</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
-                    <p class="footer-description">
-                        Crafting exceptional corporate websites that define industry 
-                        standards through artistic vision, technical excellence, and 
-                        strategic innovation.
-                    </p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                </div>
+                <div class="why-us-points">
+                    <div class="why-point fade-in">
+                        <div class="why-num">01</div>
+                        <div class="why-content">
+                            <h4>Boleh Jumpa Terus</h4>
+                            <p>Bukan syarikat KL yang jauh — kami ada di Terengganu. Boleh jumpa, berbincang, dan kerja sama secara terus.</p>
+                        </div>
+                    </div>
+                    <div class="why-point fade-in">
+                        <div class="why-num">02</div>
+                        <div class="why-content">
+                            <h4>Laman Web Laju & SEO</h4>
+                            <p>Hand-coded websites load 3× faster than WordPress. Better Google ranking = more customers find you.</p>
+                        </div>
+                    </div>
+                    <div class="why-point fade-in">
+                        <div class="why-num">03</div>
+                        <div class="why-content">
+                            <h4>Support Selepas Launch</h4>
+                            <p>Kami tak hilang lepas anda bayar. Kami terus support anda — ada masalah, hubungi kami terus.</p>
+                        </div>
+                    </div>
+                    <div class="why-point fade-in">
+                        <div class="why-num">04</div>
+                        <div class="why-content">
+                            <h4>Bayar Sekali Sahaja</h4>
+                            <p>No hidden fees. No monthly plugin costs. One price, full website, yours forever.</p>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div>
-                    <h4 class="footer-heading">Excellence</h4>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#home">Our Philosophy</a></li>
-                        <li class="footer-link"><a href="#portfolio">Masterpieces</a></li>
-                        <li class="footer-link"><a href="#process">Methodology</a></li>
-                        <li class="footer-link"><a href="#contact">Collaborate</a></li>
-                    </ul>
+    <!-- PORTFOLIO -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">— Kerja Kami / Our Work</div>
+                <h2 class="section-title">Portfolio</h2>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-img">
+                        <img src="telt.png" alt="Teliti Infotech">
+                        <div class="portfolio-overlay">
+                            <a href="https://teliti.com" target="_blank" class="portfolio-link">View Live Site →</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">Corporate · IT Solutions</div>
+                        <h3>Teliti Infotech Sdn Bhd</h3>
+                        <p>Corporate IT solutions website built during internship — fully custom coded without any templates.</p>
+                        <div class="portfolio-tags">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>Responsive</span>
+                            <span>Corporate</span>
+                        </div>
+                    </div>
                 </div>
-
-                <div>
-                    <h4 class="footer-heading">Connect</h4>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="mailto:luqman.ablatif@gmail.com">hello@maxmin.com</a></li>
-                        <li class="footer-link"><a href="tel:010-930-4866">010-930-4866</a></li>
-                        <li class="footer-link"><a href="https://www.linkedin.com/in/ahmad-luqman-31b236250/">LinkedIn</a></li>
-                    </ul>
+                <div class="portfolio-card fade-in">
+                    <div class="portfolio-img">
+                        <img src="prv.png" alt="Prove Fortech">
+                        <div class="portfolio-overlay">
+                            <a href="https://prove.com.my" target="_blank" class="portfolio-link">View Live Site →</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <div class="portfolio-meta">Corporate · ICT</div>
+                        <h3>Prove Fortech Sdn Bhd</h3>
+                        <p>ICT solutions company website — clean design, professional presentation, built from scratch.</p>
+                        <div class="portfolio-tags">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>Responsive</span>
+                            <span>Corporate</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder card for future project -->
+                <div class="portfolio-card portfolio-cta-card fade-in">
+                    <div class="portfolio-cta-inner">
+                        <div class="portfolio-cta-icon">+</div>
+                        <h3>Laman Web Anda Di Sini</h3>
+                        <p>Jadi klien seterusnya MaxMin. Portfolio anda akan dipamerkan kepada ribuan bakal pelanggan.</p>
+                        <a href="#contact" class="btn-primary">Mulakan Sekarang</a>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- PROCESS -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">— Cara Kami Kerja / How It Works</div>
+                <h2 class="section-title">Mudah. Laju.<br>Professional.</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-step fade-in">
+                    <div class="process-num">01</div>
+                    <div class="process-icon">💬</div>
+                    <h4>Berbincang</h4>
+                    <p>WhatsApp atau jumpa terus. Kami dengar keperluan anda dan cadangkan penyelesaian terbaik.</p>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step fade-in">
+                    <div class="process-num">02</div>
+                    <div class="process-icon">✏️</div>
+                    <h4>Rekabentuk</h4>
+                    <p>Kami tunjukkan reka bentuk awal. Anda beri feedback. Kami ubah sehingga anda puas hati.</p>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step fade-in">
+                    <div class="process-num">03</div>
+                    <div class="process-icon">⚡</div>
+                    <h4>Bina & Launch</h4>
+                    <p>Kami code dan lancarkan laman web anda. Siap dalam 1–2 minggu. Support berterusan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">— Pakej & Harga / Packages</div>
+                <h2 class="section-title">Pilih Pakej<br>Anda</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <div class="pricing-top">
+                        <div class="pricing-name">Basic</div>
+                        <div class="pricing-price">RM <strong>799</strong></div>
+                        <div class="pricing-desc">Sesuai untuk perniagaan kecil yang baru bermula. Cepat online, nampak profesional.</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="yes">3 halaman (Home, About, Contact)</li>
+                        <li class="yes">Mobile-friendly & responsive</li>
+                        <li class="yes">WhatsApp button terintegrasi</li>
+                        <li class="yes">1 bulan support percuma</li>
+                        <li class="yes">SEO asas</li>
+                        <li class="no">Domain & Hosting</li>
+                        <li class="no">Logo design</li>
+                    </ul>
+                    <a href="https://wa.me/60109304866?text=Saya%20berminat%20dengan%20Pakej%20Basic%20MaxMin" class="btn-pricing" target="_blank">Hubungi Kami →</a>
+                </div>
+                <div class="pricing-card featured fade-in">
+                    <div class="pricing-badge">⭐ Paling Popular</div>
+                    <div class="pricing-top">
+                        <div class="pricing-name">Standard</div>
+                        <div class="pricing-price">RM <strong>1,299</strong></div>
+                        <div class="pricing-desc">Untuk perniagaan yang nak nampak profesional dan dipercayai oleh pelanggan.</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="yes">5 halaman</li>
+                        <li class="yes">Mobile-friendly & responsive</li>
+                        <li class="yes">Contact form + WhatsApp</li>
+                        <li class="yes">3 bulan support percuma</li>
+                        <li class="yes">Google Maps integration</li>
+                        <li class="yes">SEO optimized</li>
+                        <li class="no">Domain & Hosting</li>
+                    </ul>
+                    <a href="https://wa.me/60109304866?text=Saya%20berminat%20dengan%20Pakej%20Standard%20MaxMin" class="btn-pricing" target="_blank">Hubungi Kami →</a>
+                </div>
+                <div class="pricing-card fade-in">
+                    <div class="pricing-top">
+                        <div class="pricing-name">Premium</div>
+                        <div class="pricing-price">RM <strong>1,999</strong></div>
+                        <div class="pricing-desc">Pakej lengkap untuk bisnes yang serius tentang kehadiran digital mereka.</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="yes">Sehingga 8 halaman</li>
+                        <li class="yes">Mobile-friendly & responsive</li>
+                        <li class="yes">Contact form + WhatsApp</li>
+                        <li class="yes">Domain & Hosting setup</li>
+                        <li class="yes">Logo design termasuk</li>
+                        <li class="yes">6 bulan support percuma</li>
+                        <li class="yes">Google Analytics setup</li>
+                    </ul>
+                    <a href="https://wa.me/60109304866?text=Saya%20berminat%20dengan%20Pakej%20Premium%20MaxMin" class="btn-pricing" target="_blank">Hubungi Kami →</a>
+                </div>
+            </div>
+            <div class="pricing-footer">
+                <p>💡 Semua pakej termasuk laman web yang responsive. Domain & hosting tidak termasuk melainkan dinyatakan.<br>Ada keperluan khas? <a href="https://wa.me/60109304866" target="_blank">Hubungi kami untuk sebut harga.</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header center">
+                <div class="section-label">— Soalan Lazim / FAQ</div>
+                <h2 class="section-title">Soalan Yang<br>Selalu Ditanya</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-q">Berapa lama untuk siapkan laman web? <span>+</span></button>
+                    <div class="faq-a">
+                        <p>Biasanya 1–2 minggu bergantung kepada pakej dan maklumat yang anda berikan. Pakej Basic boleh siap dalam 5–7 hari bekerja.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Adakah laman web boleh dilihat di telefon? <span>+</span></button>
+                    <div class="faq-a">
+                        <p>Ya! Semua laman web kami direka mobile-first — nampak cantik dan berfungsi sempurna di telefon, tablet, dan komputer.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Domain dan hosting macam mana? <span>+</span></button>
+                    <div class="faq-a">
+                        <p>Pakej Basic dan Standard tidak termasuk domain/hosting — kami bantu anda beli dan setup. Pakej Premium termasuk setup domain & hosting penuh.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Boleh saya ubah kandungan sendiri lepas siap? <span>+</span></button>
+                    <div class="faq-a">
+                        <p>Boleh! Kami sediakan panduan ringkas. Atau anda boleh hubungi kami — perubahan kecil biasanya percuma dalam tempoh support.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Apa beza hand-coded vs WordPress? <span>+</span></button>
+                    <div class="faq-a">
+                        <p>Laman web hand-coded kami load 3× lebih laju, lebih selamat (tiada plugin yang boleh digodam), dan ranking Google lebih baik. WordPress ada kos bulanan untuk plugins dan hosting yang lebih mahal.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Cara bayaran macam mana? <span>+</span></button>
+                    <div class="faq-a">
+                        <p>50% deposit untuk mula, baki 50% selepas anda setuju dengan hasil akhir. Bayaran melalui bank transfer ke akaun syarikat MaxMin.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-left">
+                    <div class="section-label">— Hubungi Kami / Contact</div>
+                    <h2 class="section-title">Jom<br>Berbincang</h2>
+                    <p class="contact-sub">Ada soalan? Nak minta sebut harga? Hubungi kami sekarang. Kami akan balas dalam masa 24 jam.</p>
+                    <div class="contact-info">
+                        <a href="https://wa.me/60109304866" target="_blank" class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <div class="contact-label">WhatsApp (Paling Cepat)</div>
+                                <div class="contact-value">+601X-XXXX XXXX</div>
+                            </div>
+                        </a>
+                        <a href="mailto:hello@maxmin.com.my" class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <div class="contact-label">Email</div>
+                                <div class="contact-value">hello@maxmin.com.my</div>
+                            </div>
+                        </a>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <div class="contact-label">Lokasi</div>
+                                <div class="contact-value">Terengganu, Malaysia</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🏢</div>
+                            <div>
+                                <div class="contact-label">Pendaftaran</div>
+                                <div class="contact-value">Syarikat Berdaftar SSM Malaysia</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrap">
+                    <div class="contact-form">
+                        <h3>Hantar Mesej</h3>
+                        <div class="form-group">
+                            <label>Nama anda *</label>
+                            <input type="text" placeholder="Contoh: Ahmad bin Hassan" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label>No. WhatsApp *</label>
+                            <input type="text" placeholder="Contoh: 0123456789" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Jenis perkhidmatan</label>
+                            <select id="service">
+                                <option value="">Pilih perkhidmatan...</option>
+                                <option value="Basic Website (RM799)">Basic Website (RM799)</option>
+                                <option value="Standard Website (RM1,299)">Standard Website (RM1,299)</option>
+                                <option value="Premium Website (RM1,999)">Premium Website (RM1,999)</option>
+                                <option value="Logo & Branding">Logo & Branding</option>
+                                <option value="Website Maintenance">Website Maintenance</option>
+                                <option value="Lain-lain / Tanya dulu">Lain-lain / Tanya dulu</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Mesej anda *</label>
+                            <textarea placeholder="Ceritakan sikit tentang perniagaan anda dan apa yang anda perlukan..." id="message" rows="4"></textarea>
+                        </div>
+                        <button onclick="sendWhatsApp()" class="btn-primary btn-full">
+                            <span>Hantar via WhatsApp 📱</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                        <p class="form-note">* Anda akan diarahkan ke WhatsApp. Kami balas dalam 24 jam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="mm1.png" alt="MaxMin" class="footer-logo">
+                    <p>Laman web profesional untuk perniagaan Malaysia. Hand-coded. No WordPress.</p>
+                    <div class="footer-ssm">🏢 Syarikat Berdaftar SSM Malaysia</div>
+                </div>
+                <div class="footer-links">
+                    <h5>Navigasi</h5>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#process">Proses</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Perkhidmatan</h5>
+                    <a href="#services">Business Website</a>
+                    <a href="#services">Website Maintenance</a>
+                    <a href="#services">Logo & Branding</a>
+                    <a href="#pricing">Semua Pakej</a>
+                </div>
+                <div class="footer-links">
+                    <h5>Hubungi</h5>
+                    <a href="https://wa.me/60109304866" target="_blank">WhatsApp Kami</a>
+                    <a href="mailto:hello@maxmin.com.my">hello@maxmin.com.my</a>
+                    <span>Terengganu, Malaysia</span>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 maxmin. Redefining digital excellence through exceptional website design.</p>
+                <p>© 2026 MaxMin. All rights reserved.</p>
+                <p>Made with ❤️ in Terengganu 🇲🇾</p>
             </div>
         </div>
     </footer>
 
-    <!-- Main JavaScript -->
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/60109304866?text=Salam%2C%20saya%20nak%20tanya%20pasal%20perkhidmatan%20MaxMin" 
+       class="wa-float" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <div class="wa-tooltip">Chat dengan kami!</div>
+    </a>
+
     <script src="script.js"></script>
 </body>
 </html>
