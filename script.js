@@ -1,199 +1,206 @@
-// Enhanced JavaScript with Mobile Support
-class PremiumWebsite {
-    constructor() {
-        this.init();
-    }
+// MaxMin — script.js v2.0
 
-    init() {
-        this.setupLoading();
-        this.setupMobileMenu();
-        this.setupHeader();
-        this.setupVideo();
-        this.setupSmoothScrolling();
-        this.setupObservers();
-        this.setupTouchInteractions();
-        this.fixTextOverflow();
-    }
+document.addEventListener('DOMContentLoaded', () => {
 
-    setupLoading() {
-        const loading = document.getElementById('loading');
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                loading.classList.add('hidden');
-            }, 800);
-        });
-    }
+    // ===== CUSTOM CURSOR =====
+    const cursor = document.getElementById('cursor');
+    const follower = document.getElementById('cursorFollower');
 
-    setupMobileMenu() {
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const body = document.body;
+    if (cursor && follower && window.matchMedia('(hover: hover)').matches) {
+        let mouseX = 0, mouseY = 0;
+        let followerX = 0, followerY = 0;
 
-        mobileMenuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mobileMenuBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
         });
 
-        // Close menu when clicking on links
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                body.style.overflow = '';
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (mobileMenu.classList.contains('active') && 
-                !mobileMenu.contains(e.target) && 
-                !mobileMenuBtn.contains(e.target)) {
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                body.style.overflow = '';
-            }
-        });
-
-        // Close menu on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                body.style.overflow = '';
-            }
-        });
-    }
-
-    setupHeader() {
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    }
-
-    setupVideo() {
-        const video = document.querySelector('.hero-video');
-        if (video) {
-            // Set video attributes for mobile
-            video.setAttribute('playsinline', '');
-            video.setAttribute('muted', '');
-            video.setAttribute('autoplay', '');
-            video.setAttribute('loop', '');
-            
-            // Handle video playback
-            const playVideo = () => {
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(() => {
-                        // Autoplay prevented, mute and try again
-                        video.muted = true;
-                        video.play();
-                    });
-                }
-            };
-            
-            // Try to play after user interaction
-            document.addEventListener('click', playVideo, { once: true });
-            
-            // Also try on load
-            video.addEventListener('loadeddata', playVideo);
+        function animateFollower() {
+            followerX += (mouseX - followerX) * 0.1;
+            followerY += (mouseY - followerY) * 0.1;
+            follower.style.left = followerX + 'px';
+            follower.style.top = followerY + 'px';
+            requestAnimationFrame(animateFollower);
         }
-    }
+        animateFollower();
 
-    setupSmoothScrolling() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerHeight = document.getElementById('header').offsetHeight;
-                    const targetPosition = target.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+        document.addEventListener('mouseleave', () => {
+            cursor.style.opacity = '0';
+            follower.style.opacity = '0';
+        });
+        document.addEventListener('mouseenter', () => {
+            cursor.style.opacity = '1';
+            follower.style.opacity = '1';
         });
     }
 
-    setupObservers() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -30px 0px'
-        });
+    // ===== LOADER =====
+    const loader = document.getElementById('loader');
+    window.addEventListener('load', () => {
+        setTimeout(() => loader.classList.add('hidden'), 1400);
+    });
 
-        document.querySelectorAll('.fade-in').forEach(el => {
+    // ===== HEADER SCROLL =====
+    const header = document.getElementById('header');
+    const handleScroll = () => {
+        header.classList.toggle('scrolled', window.scrollY > 60);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    // ===== MOBILE MENU =====
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    const overlay = document.getElementById('overlay');
+
+    const openMenu = () => {
+        hamburger.classList.add('active');
+        nav.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    hamburger.addEventListener('click', () => {
+        nav.classList.contains('active') ? closeMenu() : openMenu();
+    });
+
+    overlay.addEventListener('click', closeMenu);
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
+
+    // ===== SCROLL ANIMATIONS =====
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                // Stagger delay for sibling elements
+                const siblings = entry.target.parentElement?.querySelectorAll('.fade-in');
+                if (siblings) {
+                    let idx = 0;
+                    siblings.forEach((el, i) => { if (el === entry.target) idx = i; });
+                    entry.target.style.transitionDelay = `${idx * 0.1}s`;
+                }
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.service-card, .portfolio-card, .pricing-card, .why-point, .contact-item, .process-step, .faq-item')
+        .forEach(el => {
+            el.classList.add('fade-in');
             observer.observe(el);
         });
-    }
 
-    setupTouchInteractions() {
-        // Add touch-specific interactions
-        if ('ontouchstart' in window) {
-            // Prevent :hover styles on touch
-            document.addEventListener('touchstart', () => {}, true);
-            
-            // Add tap feedback
-            document.querySelectorAll('.btn, .nav-cta, .mobile-nav-link').forEach(element => {
-                element.addEventListener('touchstart', function() {
-                    this.style.transform = 'scale(0.95)';
-                });
-                
-                element.addEventListener('touchend', function() {
-                    this.style.transform = '';
-                });
-            });
-        }
-    }
-
-    fixTextOverflow() {
-        // Ensure all text containers have proper overflow handling
-        const textContainers = document.querySelectorAll('.hero-title, .hero-subtitle, .section-title, .section-subtitle, .step-description');
-        textContainers.forEach(container => {
-            container.style.wordWrap = 'break-word';
-            container.style.overflowWrap = 'break-word';
+    // ===== SMOOTH SCROLL =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', e => {
+            const href = anchor.getAttribute('href');
+            const target = document.querySelector(href);
+            if (target && href !== '#') {
+                e.preventDefault();
+                const headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72;
+                const offset = target.getBoundingClientRect().top + window.scrollY - headerH;
+                window.scrollTo({ top: offset, behavior: 'smooth' });
+            }
         });
-    }
-}
+    });
 
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    new PremiumWebsite();
+    // ===== FAQ ACCORDION =====
+    document.querySelectorAll('.faq-item').forEach(item => {
+        const btn = item.querySelector('.faq-q');
+        btn.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            // Open clicked (unless it was open)
+            if (!isOpen) item.classList.add('open');
+        });
+    });
+
+    // ===== ACTIVE NAV LINK =====
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.style.color = '';
+                    if (link.getAttribute('href') === '#' + entry.target.id) {
+                        if (!link.classList.contains('nav-cta')) link.style.color = '#c9a84c';
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.3 });
+
+    sections.forEach(s => navObserver.observe(s));
+
+    // ===== COUNTER ANIMATION =====
+    const counters = document.querySelectorAll('.stat-num');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const text = el.textContent;
+                const num = parseFloat(text);
+                if (!isNaN(num) && num > 1) {
+                    let start = 0;
+                    const duration = 1500;
+                    const startTime = performance.now();
+                    const update = (currentTime) => {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = Math.floor(eased * num) + (text.includes('%') ? '%' : '+');
+                        if (progress < 1) requestAnimationFrame(update);
+                        else el.textContent = text;
+                    };
+                    requestAnimationFrame(update);
+                }
+                counterObserver.unobserve(el);
+            }
+        });
+    });
+    counters.forEach(c => counterObserver.observe(c));
+
 });
 
-// Handle resize events
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        if (mobileMenu.classList.contains('active')) {
-            mobileMenu.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+// ===== WHATSAPP FORM =====
+function sendWhatsApp() {
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const serviceEl = document.getElementById('service');
+    const service = serviceEl ? serviceEl.value : '';
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !phone) {
+        alert('Sila isi nama dan no. WhatsApp anda.\nPlease fill in your name and WhatsApp number.');
+        return;
     }
-});
 
-// Fix for mobile viewport height
-function setViewportHeight() {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    if (!message) {
+        alert('Sila isi mesej anda.\nPlease fill in your message.');
+        return;
+    }
+
+    let text = `Salam MaxMin! 👋\n\n`;
+    text += `*Nama:* ${name}\n`;
+    text += `*No. WhatsApp:* ${phone}\n`;
+    if (service) text += `*Perkhidmatan:* ${service}\n`;
+    text += `\n*Mesej:*\n${message}\n\n`;
+    text += `_Dihantar dari laman web maxmin.com.my_`;
+
+    const waNumber = '60109304866';
+    window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank');
 }
-
-window.addEventListener('resize', setViewportHeight);
-window.addEventListener('orientationchange', setViewportHeight);
-setViewportHeight();
