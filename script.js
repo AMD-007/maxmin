@@ -201,6 +201,6 @@ function sendWhatsApp() {
     text += `\n*Mesej:*\n${message}\n\n`;
     text += `_Dihantar dari laman web maxmin.com.my_`;
 
-    const waNumber = '60109304866';
+    const waNumber = '60109464866';
     window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank');
 }
