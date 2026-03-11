@@ -115,7 +115,7 @@ body:has(button:hover) .cursor { transform: translate(-50%,-50%) scale(2); }
     height: 100%;
     background: var(--gold);
     border-radius: 2px;
-    animation: loadBar 1.2s ease forwards;
+    animation: loadBar 0.5s ease forwards;
 }
 
 @keyframes loadBar {
