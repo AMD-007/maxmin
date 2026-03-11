@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===== LOADER =====
     const loader = document.getElementById('loader');
     window.addEventListener('load', () => {
-        setTimeout(() => loader.classList.add('hidden'), 1400);
+        setTimeout(() => loader.classList.add('hidden'), 600);
     });
 
     // ===== HEADER SCROLL =====
