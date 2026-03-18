@@ -533,7 +533,7 @@ function render(t){
     <div id="mm6-flash"></div>
     <div id="mm6-vid-wrap">
       <video id="mm6-vid" autoplay muted loop playsinline>
-        <source src="wave.mp4" type="video/mp4">
+        <source src="vx.mp4" type="video/mp4">
       </video>
     </div>
     <div id="mm6-tint"></div>
