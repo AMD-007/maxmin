@@ -1,6 +1,6 @@
 // ============================================================
 // MAXMIN CELEBRATIONS ENGINE v6.0 — PRODUCTION
-// Auto date detection · wave.mp4 · mx-x.png
+// Auto date detection · vx.mp4 · mx-x.png
 // ============================================================
 // Update RAYA_DATES every year!
 // ============================================================
