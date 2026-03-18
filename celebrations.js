@@ -8,11 +8,11 @@
 'use strict';
 
 // ─── RAYA DATES — UPDATE EVERY YEAR ─────────────────────
-const RAYA_DATES      = ['2026-03-18','2026-03-21','2026-03-22'];
+const RAYA_DATES      = ['2026-03-20','2026-03-21','2026-03-22'];
 const RAYA_HAJI_DATES = ['2026-05-27','2026-05-28'];
 
 const FIXED_DAYS = {
-  '01-01':'newyear',
+  '03-18':'newyear',
   '03-11':'birthday',
   '08-31':'merdeka',
   '09-16':'malaysia',
