@@ -40,7 +40,7 @@ const THEMES={
   birthday:{
     tag:'ULANG TAHUN MAXMIN',
     headline:'HAPPY BIRTHDAY',
-    sub:'1 Tahun Berkhidmat untuk Perniagaan Terengganu, Malaysia',
+    sub:'Ulang Tahun Berkhidmat untuk Perniagaan Terengganu, Malaysia',
     cta:'JEMPUT MASUK',
     tint:'rgba(60,0,30,.60)',
     vidFilter:'hue-rotate(280deg) saturate(1.8) brightness(.55)',
@@ -87,8 +87,8 @@ const THEMES={
   },
   christmas:{
     tag:'HARI KRISMAS',
-    headline:'MERRY CHRISTMAS',
-    sub:'Selamat Hari Krismas · Dari Seluruh Team MaxMin',
+    headline:'CHRISTMAS DAY',
+    sub:'Selamat Bercuti · Dari Seluruh Team MaxMin',
     cta:'MASUK KE WEBSITE',
     tint:'rgba(0,18,5,.67)',
     vidFilter:'hue-rotate(120deg) saturate(1.4) brightness(.42)',
