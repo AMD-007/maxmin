@@ -20,6 +20,15 @@ const FIXED_DAYS = {
   '12-31':'newyear',
 };
 
+function getTodayTheme(){
+  const now = new Date();
+  const mmdd = String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
+  const full = now.toISOString().split('T')[0];
+  if(RAYA_DATES.includes(full)) return 'raya';
+  if(RAYA_HAJI_DATES.includes(full)) return 'raya';
+  return FIXED_DAYS[mmdd]||null;
+}
+
 const TODAY_THEME = getTodayTheme();
 if(!TODAY_THEME) return;
 
