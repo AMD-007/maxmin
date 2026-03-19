@@ -20,18 +20,6 @@ const FIXED_DAYS = {
   '12-31':'newyear',
 };
 
-function getTodayTheme(){
-  // Use Malaysia timezone (UTC+8) to get correct date
-  const now    = new Date();
-  const offset = 8 * 60; // Malaysia = UTC+8
-  const local  = new Date(now.getTime() + (offset - now.getTimezoneOffset()) * 60000);
-  const mmdd   = String(local.getMonth()+1).padStart(2,'0')+'-'+String(local.getDate()).padStart(2,'0');
-  const full   = local.toISOString().split('T')[0];
-  if(RAYA_DATES.includes(full))       return 'raya';
-  if(RAYA_HAJI_DATES.includes(full))  return 'raya';
-  return FIXED_DAYS[mmdd]||null;
-}
-
 const TODAY_THEME = getTodayTheme();
 if(!TODAY_THEME) return;
 
