@@ -543,7 +543,7 @@ function render(t){
         <div class="mm6-c c"></div><div class="mm6-c d"></div>
         <div id="mm6-logo-wrap">
           <div id="mm6-logo-glow"></div>
-          <img id="mm6-logo-img" src="mx-x.png" alt="MaxMin Logo">
+          <img id="mm6-logo-img" src="mxmn-x.png" alt="MaxMin Logo">
         </div>
         <div id="mm6-tag">${t.tag}</div>
         <div id="mm6-rule"><div class="mm6-diamond"></div></div>
