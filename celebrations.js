@@ -9,7 +9,7 @@
 'use strict';
 
 // ─── 1. DATES — UPDATE EVERY YEAR ────────────────────────
-const RAYA_DATES      = ['2026-03-20','2026-03-21','2026-03-22','2026-03-23'];
+const RAYA_DATES      = ['2026-03-23','2026-03-24','2026-03-25','2026-03-26'];
 const RAYA_HAJI_DATES = ['2026-05-27','2026-05-28'];
 
 const FIXED_DAYS = {
