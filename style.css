@@ -180,6 +180,11 @@ nav ul li a:hover {
     color: var(--gold);
 }
 
+/* Active nav link */
+nav ul li a.nav-active {
+    color: #c9a84c;
+}
+
 .nav-cta {
     background: var(--gold) !important;
     color: var(--black) !important;

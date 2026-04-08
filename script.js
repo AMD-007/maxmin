@@ -78,28 +78,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
     window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
 
-    // ===== SCROLL ANIMATIONS =====
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-            if (entry.isIntersecting) {
-                // Stagger delay for sibling elements
-                const siblings = entry.target.parentElement?.querySelectorAll('.fade-in');
-                if (siblings) {
-                    let idx = 0;
-                    siblings.forEach((el, i) => { if (el === entry.target) idx = i; });
-                    entry.target.style.transitionDelay = `${idx * 0.1}s`;
-                }
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+// ===== SCROLL ANIMATIONS =====
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.transitionDelay = `${entry.target.dataset.fadeIndex * 0.1}s`;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.service-card, .portfolio-card, .pricing-card, .why-point, .contact-item, .process-step, .faq-item')
-        .forEach(el => {
-            el.classList.add('fade-in');
-            observer.observe(el);
-        });
+document.querySelectorAll('.service-card, .portfolio-card, .pricing-card, .why-point, .contact-item, .process-step, .faq-item')
+    .forEach(el => {
+        el.classList.add('fade-in');
+        // Calculate stagger index once, grouped by parent
+        const siblings = Array.from(el.parentElement.querySelectorAll('.fade-in'));
+        el.dataset.fadeIndex = siblings.indexOf(el);
+        observer.observe(el);
+    });
 
     // ===== SMOOTH SCROLL =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -131,42 +128,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav ul li a');
 
-    const navObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(link => {
-                    link.style.color = '';
-                    if (link.getAttribute('href') === '#' + entry.target.id) {
-                        if (!link.classList.contains('nav-cta')) link.style.color = '#c9a84c';
-                    }
-                });
-            }
-        });
-    }, { threshold: 0.3 });
+const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+                link.classList.remove('nav-active');
+                if (link.getAttribute('href') === '#' + entry.target.id) {
+                    if (!link.classList.contains('nav-cta')) link.classList.add('nav-active');
+                }
+            });
+        }
+    });
+}, { threshold: 0.3 });
 
     sections.forEach(s => navObserver.observe(s));
 
     // ===== COUNTER ANIMATION =====
+    // Bug fix: SSM stat contains no digits — skip counter, apply fade instead
     const counters = document.querySelectorAll('.stat-num');
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const el = entry.target;
-                const text = el.textContent;
+                const text = el.textContent.trim();
                 const num = parseFloat(text);
-                if (!isNaN(num) && num > 1) {
-                    let start = 0;
+                const hasDigits = /\d/.test(text);
+
+                if (hasDigits && !isNaN(num) && num > 1) {
+                    // Numeric stat — animate counter
                     const duration = 1500;
                     const startTime = performance.now();
+                    const suffix = text.includes('%') ? '%' : text.includes('+') ? '+' : '';
                     const update = (currentTime) => {
                         const elapsed = currentTime - startTime;
                         const progress = Math.min(elapsed / duration, 1);
                         const eased = 1 - Math.pow(1 - progress, 3);
-                        el.textContent = Math.floor(eased * num) + (text.includes('%') ? '%' : '+');
+                        el.textContent = Math.floor(eased * num) + suffix;
                         if (progress < 1) requestAnimationFrame(update);
                         else el.textContent = text;
                     };
                     requestAnimationFrame(update);
+                } else {
+                    // Text-only stat (e.g. "SSM") — just fade in smoothly
+                    el.style.opacity = '0';
+                    el.style.transition = 'opacity 0.8s ease';
+                    requestAnimationFrame(() => { el.style.opacity = '1'; });
                 }
                 counterObserver.unobserve(el);
             }
@@ -174,33 +180,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     counters.forEach(c => counterObserver.observe(c));
 
+    // ===== WHATSAPP FORM =====
+    // Bug fix: moved inside DOMContentLoaded so waBtn is always ready
+    const waBtn = document.getElementById('wa-btn');
+    if (waBtn) {
+        waBtn.addEventListener('click', () => {
+            // Honeypot check — if filled, it's a bot
+            const honeypot = document.getElementById('honeypot');
+            if (honeypot && honeypot.value !== '') return;
+
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const serviceEl = document.getElementById('service');
+            const service = serviceEl ? serviceEl.value : '';
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !phone) {
+                alert('Sila isi nama dan no. WhatsApp anda.\nPlease fill in your name and WhatsApp number.');
+                return;
+            }
+
+            // Bug fix: phone number validation
+            if (!/^[0-9+\s\-]{9,15}$/.test(phone)) {
+                alert('Sila masukkan nombor telefon yang sah.\nPlease enter a valid phone number.');
+                return;
+            }
+
+            if (!message) {
+                alert('Sila isi mesej anda.\nPlease fill in your message.');
+                return;
+            }
+
+            // Button cooldown — prevent spam clicking
+            waBtn.disabled = true;
+            waBtn.querySelector('span').textContent = 'Sending...';
+            setTimeout(() => {
+                waBtn.disabled = false;
+                waBtn.querySelector('span').textContent = 'Send via WhatsApp 📱';
+            }, 5000);
+
+            let text = `Salam MaxMin! 👋\n\n`;
+            text += `*Nama:* ${name}\n`;
+            text += `*No. WhatsApp:* ${phone}\n`;
+            if (service) text += `*Perkhidmatan:* ${service}\n`;
+            text += `\n*Mesej:*\n${message}\n\n`;
+            text += `_Dihantar dari laman web maxmin.com.my_`;
+
+            const waNumber = '60109464866';
+            window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank');
+        });
+    }
+
 });
-
-// ===== WHATSAPP FORM =====
-function sendWhatsApp() {
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const serviceEl = document.getElementById('service');
-    const service = serviceEl ? serviceEl.value : '';
-    const message = document.getElementById('message').value.trim();
-
-    if (!name || !phone) {
-        alert('Sila isi nama dan no. WhatsApp anda.\nPlease fill in your name and WhatsApp number.');
-        return;
-    }
-
-    if (!message) {
-        alert('Sila isi mesej anda.\nPlease fill in your message.');
-        return;
-    }
-
-    let text = `Salam MaxMin! 👋\n\n`;
-    text += `*Nama:* ${name}\n`;
-    text += `*No. WhatsApp:* ${phone}\n`;
-    if (service) text += `*Perkhidmatan:* ${service}\n`;
-    text += `\n*Mesej:*\n${message}\n\n`;
-    text += `_Dihantar dari laman web maxmin.com.my_`;
-
-    const waNumber = '60109464866';
-    window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`, '_blank');
-}
