@@ -89,7 +89,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.service-card, .portfolio-card, .pricing-card, .why-point, .contact-item, .process-step, .faq-item')
+document.querySelectorAll('.service-card, .portfolio-card, .pricing-card, .why-point, .contact-item, .process-step, .faq-item, .testimonial-card, .maintenance-card, .about-stat, .pricing-factor')
     .forEach(el => {
         el.classList.add('fade-in');
         // Calculate stagger index once, grouped by parent
